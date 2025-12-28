@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import LetterA from './characters/LetterA'
 import LetterB from './characters/LetterB'
 import LetterC from './characters/LetterC'
@@ -11,18 +11,26 @@ const letters = {
 
 function App() {
     const [currentLetter, setCurrentLetter] = useState('')
+    const blockedRef = useRef(false)
 
     useEffect(() => {
         function selectLetter(e) {
+            if (blockedRef.current) return
+
             const key = e.key.toLowerCase()
             if (letters[key]) {
                 setCurrentLetter(key)
+                blockedRef.current = true
+                setTimeout(() => {
+                    blockedRef.current = false
+                }, 2000)
             }
         }
 
         window.addEventListener('keydown', selectLetter)
         return () => window.removeEventListener('keydown', selectLetter)
     }, [])
+
     if (currentLetter) {
         const LetterComponent = letters[currentLetter]
         return <LetterComponent/>
