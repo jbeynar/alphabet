@@ -9,8 +9,20 @@ const letters = {
     c: LetterC,
 }
 
+const blockedStyle = {
+    position: 'fixed',
+    top: '1rem',
+    right: '1rem',
+    background: 'rgba(0,0,0,0.7)',
+    color: '#fff',
+    padding: '0.5rem 1rem',
+    borderRadius: '4px',
+    fontSize: '1rem',
+}
+
 function App() {
     const [currentLetter, setCurrentLetter] = useState('')
+    const [blocked, setBlocked] = useState(false)
     const blockedRef = useRef(false)
 
     useEffect(() => {
@@ -21,8 +33,10 @@ function App() {
             if (letters[key]) {
                 setCurrentLetter(key)
                 blockedRef.current = true
+                setBlocked(true)
                 setTimeout(() => {
                     blockedRef.current = false
+                    setBlocked(false)
                 }, 2000)
             }
         }
@@ -33,7 +47,12 @@ function App() {
 
     if (currentLetter) {
         const LetterComponent = letters[currentLetter]
-        return <LetterComponent/>
+        return (
+            <>
+                <LetterComponent/>
+                {blocked && <div style={blockedStyle}>Poczekaj dwie sekundy</div>}
+            </>
+        )
     } else {
         return "Hello World!"
     }
