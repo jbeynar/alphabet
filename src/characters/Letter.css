@@ -1,0 +1,23 @@
+.letter-container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 2rem;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 15vh;
+}
+
+.letter-uppercase {
+    font-size: 20rem;
+    font-weight: bold;
+    font-family: system-ui, sans-serif;
+    color: #fff;
+}
+
+.letter-lowercase {
+    font-size: 16rem;
+    font-weight: bold;
+    font-family: system-ui, sans-serif;
+    color: #fff;
+}

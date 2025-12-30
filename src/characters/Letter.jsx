@@ -1,31 +1,8 @@
-import {useEffect, useRef} from 'react'
+import { useEffect, useRef } from 'react'
 import Speech from 'speak-tts'
+import './Letter.css'
 
-const baseStyles = {
-    container: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'baseline',
-        gap: '2rem',
-        minHeight: '100vh',
-        margin: 0,
-        paddingTop: '15vh',
-    },
-    uppercase: {
-        fontSize: '20rem',
-        fontWeight: 'bold',
-        fontFamily: 'system-ui, sans-serif',
-        color: '#fff',
-    },
-    lowercase: {
-        fontSize: '16rem',
-        fontWeight: 'bold',
-        fontFamily: 'system-ui, sans-serif',
-        color: '#fff',
-    },
-}
-
-function Letter({letter, background, lang = 'pl-PL'}) {
+function Letter({ letter, background, lang = 'pl-PL' }) {
     const speechRef = useRef(null)
     const hasSpoken = useRef(null)
 
@@ -42,7 +19,7 @@ function Letter({letter, background, lang = 'pl-PL'}) {
             pitch: 0.7,
             volume: 1,
         }).then(() => {
-            speech.speak({text: "\u200B" + letter[0]})
+            speech.speak({ text: "\u200B" + letter[0] })
         }).catch(e => {
             console.error('Speech init error:', e)
         })
@@ -53,9 +30,9 @@ function Letter({letter, background, lang = 'pl-PL'}) {
     }, [letter, lang])
 
     return (
-        <div style={{...baseStyles.container, background}}>
-            <span style={baseStyles.uppercase}>{letter.toUpperCase()}</span>
-            <span style={baseStyles.lowercase}>{letter.toLowerCase()}</span>
+        <div className="letter-container" style={{ background }}>
+            <span className="letter-uppercase">{letter.toUpperCase()}</span>
+            <span className="letter-lowercase">{letter.toLowerCase()}</span>
         </div>
     )
 }
