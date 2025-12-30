@@ -2,11 +2,13 @@ import {useState, useEffect, useRef} from 'react'
 import LetterA from './characters/LetterA'
 import LetterB from './characters/LetterB'
 import LetterC from './characters/LetterC'
+import LetterD from './characters/LetterD'
 
 const letters = {
     a: LetterA,
     b: LetterB,
     c: LetterC,
+    d: LetterD,
 }
 
 const blockedStyle = {
