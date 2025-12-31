@@ -3,12 +3,15 @@ import LetterA from './characters/LetterA'
 import LetterB from './characters/LetterB'
 import LetterC from './characters/LetterC'
 import LetterD from './characters/LetterD'
+import LetterE from './characters/LetterE'
+import WelcomeScreen from './components/WelcomeScreen'
 
 const letters = {
     a: LetterA,
     b: LetterB,
     c: LetterC,
     d: LetterD,
+    e: LetterE,
 }
 
 const blockedStyle = {
@@ -56,7 +59,7 @@ function App() {
             </>
         )
     } else {
-        return "Hello World!"
+        return <WelcomeScreen />
     }
 
 }
