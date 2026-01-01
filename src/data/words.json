@@ -1,0 +1,140 @@
+{
+  "a": [
+    { "word": "arbuz", "category": "fruits" },
+    { "word": "autobus", "category": "transport" },
+    { "word": "ananas", "category": "fruits" },
+    { "word": "antylopa", "category": "animals" }
+  ],
+  "b": [
+    { "word": "banan", "category": "fruits" },
+    { "word": "balon", "category": "toys" },
+    { "word": "babcia", "category": "family" },
+    { "word": "bocian", "category": "animals" }
+  ],
+  "c": [
+    { "word": "cebula", "category": "vegetables" },
+    { "word": "ciężarówka", "category": "transport" },
+    { "word": "cytryna", "category": "fruits" },
+    { "word": "ciocia", "category": "family" }
+  ],
+  "d": [
+    { "word": "dom", "category": "building" },
+    { "word": "delfin", "category": "animals" },
+    { "word": "dynia", "category": "vegetables" },
+    { "word": "dziadek", "category": "family" }
+  ],
+  "e": [
+    { "word": "ekran", "category": "objects" },
+    { "word": "eskimos", "category": "food" },
+    { "word": "emu", "category": "animals" },
+    { "word": "etui", "category": "objects" }
+  ],
+  "f": [
+    { "word": "foka", "category": "animals" },
+    { "word": "fiolet", "category": "colors" },
+    { "word": "flaming", "category": "animals" },
+    { "word": "furtka", "category": "building" }
+  ],
+  "g": [
+    { "word": "gruszka", "category": "fruits" },
+    { "word": "gęś", "category": "animals" },
+    { "word": "garaż", "category": "building" },
+    { "word": "groch", "category": "vegetables" }
+  ],
+  "h": [
+    { "word": "hipopotam", "category": "animals" },
+    { "word": "helikopter", "category": "transport" },
+    { "word": "hak", "category": "objects" },
+    { "word": "huśtawka", "category": "toys" }
+  ],
+  "i": [
+    { "word": "igloo", "category": "building" },
+    { "word": "indyk", "category": "animals" },
+    { "word": "igła", "category": "objects" },
+    { "word": "imbir", "category": "vegetables" }
+  ],
+  "j": [
+    { "word": "jabłko", "category": "fruits" },
+    { "word": "jajko", "category": "food" },
+    { "word": "jeż", "category": "animals" },
+    { "word": "jacht", "category": "transport" }
+  ],
+  "k": [
+    { "word": "kot", "category": "animals" },
+    { "word": "koń", "category": "animals" },
+    { "word": "kapusta", "category": "vegetables" },
+    { "word": "karetka", "category": "transport" }
+  ],
+  "l": [
+    { "word": "lew", "category": "animals" },
+    { "word": "lokomotywa", "category": "transport" },
+    { "word": "lampa", "category": "objects" },
+    { "word": "lalka", "category": "toys" }
+  ],
+  "m": [
+    { "word": "mama", "category": "family" },
+    { "word": "malina", "category": "fruits" },
+    { "word": "motyl", "category": "animals" },
+    { "word": "motocykl", "category": "transport" }
+  ],
+  "n": [
+    { "word": "nos", "category": "body" },
+    { "word": "naleśnik", "category": "food" },
+    { "word": "nosorożec", "category": "animals" },
+    { "word": "nożyczki", "category": "objects" }
+  ],
+  "o": [
+    { "word": "okno", "category": "building" },
+    { "word": "ogórek", "category": "vegetables" },
+    { "word": "orzeł", "category": "animals" },
+    { "word": "osa", "category": "animals" }
+  ],
+  "p": [
+    { "word": "pies", "category": "animals" },
+    { "word": "pomidor", "category": "vegetables" },
+    { "word": "pociąg", "category": "transport" },
+    { "word": "papa", "category": "family" }
+  ],
+  "r": [
+    { "word": "rower", "category": "transport" },
+    { "word": "ryba", "category": "animals" },
+    { "word": "rak", "category": "animals" },
+    { "word": "ratusz", "category": "building" }
+  ],
+  "s": [
+    { "word": "słoń", "category": "animals" },
+    { "word": "samolot", "category": "transport" },
+    { "word": "siostra", "category": "family" },
+    { "word": "szkoła", "category": "building" }
+  ],
+  "t": [
+    { "word": "tata", "category": "family" },
+    { "word": "tygrys", "category": "animals" },
+    { "word": "tramwaj", "category": "transport" },
+    { "word": "truskawka", "category": "fruits" }
+  ],
+  "u": [
+    { "word": "usta", "category": "body" },
+    { "word": "ulica", "category": "building" },
+    { "word": "ucho", "category": "body" },
+    { "word": "udo", "category": "body" }
+  ],
+  "w": [
+    { "word": "wąż", "category": "animals" },
+    { "word": "wujek", "category": "family" },
+    { "word": "winogrono", "category": "fruits" },
+    { "word": "wieża", "category": "building" }
+  ],
+  "z": [
+    { "word": "zebra", "category": "animals" },
+    { "word": "zamek", "category": "building" },
+    { "word": "zając", "category": "animals" },
+    { "word": "ziemniak", "category": "vegetables" }
+  ],
+  "ż": [
+    { "word": "żyrafa", "category": "animals" },
+    { "word": "żółw", "category": "animals" },
+    { "word": "żaba", "category": "animals" },
+    { "word": "żagiel", "category": "transport" }
+  ]
+}

@@ -1,10 +1,19 @@
 import { useEffect, useRef } from 'react'
 import Speech from 'speak-tts'
 import './Letter.css'
+import words from '../data/words.json'
+
+const images = import.meta.glob('../data/images/**/*.png', { eager: true })
+
+function getImageUrl(letter, word) {
+    const path = `../data/images/${letter.toUpperCase()}/${word}.png`
+    return images[path]?.default
+}
 
 function Letter({ letter, background, showBoard = false, lang = 'pl-PL' }) {
     const speechRef = useRef(null)
     const hasSpoken = useRef(null)
+    const letterWords = words[letter.toLowerCase()] || []
 
     useEffect(() => {
         if (hasSpoken.current === letter) return
@@ -37,10 +46,19 @@ function Letter({ letter, background, showBoard = false, lang = 'pl-PL' }) {
                     <span className="letter-side-lower">{letter.toLowerCase()}</span>
                 </div>
                 <div className="picture-board">
-                    <div className="picture-placeholder"></div>
-                    <div className="picture-placeholder"></div>
-                    <div className="picture-placeholder"></div>
-                    <div className="picture-placeholder"></div>
+                    {letterWords.map((item) => {
+                        const imageUrl = getImageUrl(letter, item.word)
+                        return (
+                            <div key={item.word} className="picture-card">
+                                {imageUrl ? (
+                                    <img src={imageUrl} alt={item.word} className="picture-image" />
+                                ) : (
+                                    <div className="picture-placeholder"></div>
+                                )}
+                                <span className="picture-label">{item.word}</span>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         )

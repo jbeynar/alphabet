@@ -24,9 +24,11 @@
 
 .letter-with-board {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
     align-items: center;
-    padding: 2rem;
+    justify-content: center;
+    padding: 1rem;
+    overflow: hidden;
 }
 
 .letter-side {
@@ -51,21 +53,48 @@
 }
 
 .picture-board {
-    flex: 1;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 1.5rem;
     padding: 2rem;
-    max-width: 600px;
-    max-height: 600px;
-    margin: 0 auto;
+    max-width: 580px;
+}
+
+.picture-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1.25rem;
+    padding: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.picture-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    padding: 1rem;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.picture-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: system-ui, sans-serif;
+    color: #fff;
+    text-transform: capitalize;
 }
 
 .picture-placeholder {
+    width: 100%;
     aspect-ratio: 1;
     background: rgba(255, 255, 255, 0.15);
     border: 3px dashed rgba(255, 255, 255, 0.4);
     border-radius: 1rem;
-    min-height: 200px;
 }
