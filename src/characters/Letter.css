@@ -21,3 +21,51 @@
     font-family: system-ui, sans-serif;
     color: #fff;
 }
+
+.letter-with-board {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    padding: 2rem;
+}
+
+.letter-side {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.letter-side-upper {
+    font-size: 20rem;
+    font-weight: bold;
+    font-family: system-ui, sans-serif;
+    color: #fff;
+}
+
+.letter-side-lower {
+    font-size: 16rem;
+    font-weight: bold;
+    font-family: system-ui, sans-serif;
+    color: #fff;
+}
+
+.picture-board {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 600px;
+    max-height: 600px;
+    margin: 0 auto;
+}
+
+.picture-placeholder {
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.15);
+    border: 3px dashed rgba(255, 255, 255, 0.4);
+    border-radius: 1rem;
+    min-height: 200px;
+}

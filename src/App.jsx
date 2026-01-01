@@ -4,6 +4,7 @@ import LetterB from './characters/LetterB'
 import LetterC from './characters/LetterC'
 import LetterD from './characters/LetterD'
 import LetterE from './characters/LetterE'
+import LetterF from './characters/LetterF'
 import WelcomeScreen from './components/WelcomeScreen'
 
 const letters = {
@@ -12,6 +13,7 @@ const letters = {
     c: LetterC,
     d: LetterD,
     e: LetterE,
+    f: LetterF,
 }
 
 const blockedStyle = {
@@ -27,16 +29,21 @@ const blockedStyle = {
 
 function App() {
     const [currentLetter, setCurrentLetter] = useState('')
+    const [pressCount, setPressCount] = useState(0)
     const [blocked, setBlocked] = useState(false)
     const blockedRef = useRef(false)
 
     useEffect(() => {
         function selectLetter(e) {
-            if (blockedRef.current) return
-
             const key = e.key.toLowerCase()
-            if (letters[key]) {
+            if (!letters[key]) return
+
+            if (key === currentLetter) {
+                setPressCount(prev => prev + 1)
+            } else {
+                if (blockedRef.current) return
                 setCurrentLetter(key)
+                setPressCount(1)
                 blockedRef.current = true
                 setBlocked(true)
                 setTimeout(() => {
@@ -48,13 +55,13 @@ function App() {
 
         window.addEventListener('keydown', selectLetter)
         return () => window.removeEventListener('keydown', selectLetter)
-    }, [])
+    }, [currentLetter])
 
     if (currentLetter) {
         const LetterComponent = letters[currentLetter]
         return (
             <>
-                <LetterComponent/>
+                <LetterComponent showBoard={pressCount >= 2} />
                 {blocked && <div style={blockedStyle}>Poczekaj dwie sekundy</div>}
             </>
         )

@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import Speech from 'speak-tts'
 import './Letter.css'
 
-function Letter({ letter, background, lang = 'pl-PL' }) {
+function Letter({ letter, background, showBoard = false, lang = 'pl-PL' }) {
     const speechRef = useRef(null)
     const hasSpoken = useRef(null)
 
@@ -28,6 +28,23 @@ function Letter({ letter, background, lang = 'pl-PL' }) {
             speech.cancel()
         }
     }, [letter, lang])
+
+    if (showBoard) {
+        return (
+            <div className="letter-with-board" style={{ background }}>
+                <div className="letter-side">
+                    <span className="letter-side-upper">{letter.toUpperCase()}</span>
+                    <span className="letter-side-lower">{letter.toLowerCase()}</span>
+                </div>
+                <div className="picture-board">
+                    <div className="picture-placeholder"></div>
+                    <div className="picture-placeholder"></div>
+                    <div className="picture-placeholder"></div>
+                    <div className="picture-placeholder"></div>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="letter-container" style={{ background }}>
