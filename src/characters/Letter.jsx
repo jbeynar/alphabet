@@ -10,7 +10,7 @@ function getImageUrl(letter, word) {
     return images[path]?.default
 }
 
-function Letter({ letter, background, showBoard = false, lang = 'pl-PL' }) {
+function Letter({ letter, background, showBoard = false, visibleImages = 0, lang = 'pl-PL' }) {
     const speechRef = useRef(null)
     const hasSpoken = useRef(null)
     const letterWords = words[letter.toLowerCase()] || []
@@ -46,16 +46,19 @@ function Letter({ letter, background, showBoard = false, lang = 'pl-PL' }) {
                     <span className="letter-side-lower">{letter.toLowerCase()}</span>
                 </div>
                 <div className="picture-board">
-                    {letterWords.map((item) => {
+                    {letterWords.map((item, index) => {
                         const imageUrl = getImageUrl(letter, item.word)
+                        const isVisible = index < visibleImages
                         return (
                             <div key={item.word} className="picture-card">
-                                {imageUrl ? (
-                                    <img src={imageUrl} alt={item.word} className="picture-image" />
+                                {isVisible && imageUrl ? (
+                                    <>
+                                        <img src={imageUrl} alt={item.word} className="picture-image" />
+                                        <span className="picture-label">{item.word}</span>
+                                    </>
                                 ) : (
                                     <div className="picture-placeholder"></div>
                                 )}
-                                <span className="picture-label">{item.word}</span>
                             </div>
                         )
                     })}

@@ -54,11 +54,10 @@
 
 .picture-board {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 250px);
+    grid-template-rows: repeat(2, 280px);
     gap: 1.5rem;
     padding: 2rem;
-    max-width: 580px;
 }
 
 .picture-card {
@@ -70,6 +69,8 @@
     border-radius: 1.25rem;
     padding: 1rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 250px;
+    height: 280px;
 }
 
 .picture-image {
@@ -93,7 +94,7 @@
 
 .picture-placeholder {
     width: 100%;
-    aspect-ratio: 1;
+    flex: 1;
     background: rgba(255, 255, 255, 0.15);
     border: 3px dashed rgba(255, 255, 255, 0.4);
     border-radius: 1rem;

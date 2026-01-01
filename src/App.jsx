@@ -59,9 +59,10 @@ function App() {
 
     if (currentLetter) {
         const LetterComponent = letters[currentLetter]
+        const visibleImages = Math.max(0, pressCount - 2)
         return (
             <>
-                <LetterComponent showBoard={pressCount >= 2} />
+                <LetterComponent showBoard={pressCount >= 2} visibleImages={visibleImages} />
                 {blocked && <div style={blockedStyle}>Poczekaj dwie sekundy</div>}
             </>
         )
