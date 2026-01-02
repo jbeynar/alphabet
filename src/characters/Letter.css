@@ -12,14 +12,30 @@
     font-size: 20rem;
     font-weight: bold;
     font-family: system-ui, sans-serif;
-    color: #fff;
+    transition: color 0.4s ease;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.letter-uppercase.color-change {
+    animation: colorPop 0.4s ease;
 }
 
 .letter-lowercase {
     font-size: 16rem;
     font-weight: bold;
     font-family: system-ui, sans-serif;
-    color: #fff;
+    transition: color 0.4s ease;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.letter-lowercase.color-change {
+    animation: colorPop 0.4s ease;
+}
+
+@keyframes colorPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 .letter-with-board {
@@ -42,14 +58,24 @@
     font-size: 20rem;
     font-weight: bold;
     font-family: system-ui, sans-serif;
-    color: #fff;
+    transition: color 0.4s ease;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.letter-side-upper.color-change {
+    animation: colorPop 0.4s ease;
 }
 
 .letter-side-lower {
     font-size: 16rem;
     font-weight: bold;
     font-family: system-ui, sans-serif;
-    color: #fff;
+    transition: color 0.4s ease;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.letter-side-lower.color-change {
+    animation: colorPop 0.4s ease;
 }
 
 .picture-board {
@@ -73,6 +99,16 @@
     height: 280px;
 }
 
+.picture-card.card-reveal {
+    animation: cardPop 0.4s ease;
+}
+
+@keyframes cardPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
 .picture-image {
     width: 100%;
     aspect-ratio: 1;
@@ -86,10 +122,11 @@
 
 .picture-label {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 400;
     font-family: system-ui, sans-serif;
     color: #fff;
     text-transform: capitalize;
+    letter-spacing: 1px;
 }
 
 .picture-placeholder {
