@@ -1,0 +1,32 @@
+.fuse-container {
+    position: fixed;
+    bottom: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.fuse-track {
+    position: relative;
+    width: 400px;
+    height: 24px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.fuse-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #FF6B6B, #FFE66D, #4ECDC4, #FF85A2);
+    border-radius: 12px;
+    animation: fill 2s linear forwards;
+}
+
+@keyframes fill {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}

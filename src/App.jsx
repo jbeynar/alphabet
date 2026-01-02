@@ -6,6 +6,7 @@ import LetterD from './characters/LetterD'
 import LetterE from './characters/LetterE'
 import LetterF from './characters/LetterF'
 import WelcomeScreen from './components/WelcomeScreen'
+import FuseLoader from './components/FuseLoader'
 
 const letters = {
     a: LetterA,
@@ -16,16 +17,15 @@ const letters = {
     f: LetterF,
 }
 
-const blockedStyle = {
-    position: 'fixed',
-    top: '1rem',
-    right: '1rem',
-    background: 'rgba(0,0,0,0.7)',
-    color: '#fff',
-    padding: '0.5rem 1rem',
-    borderRadius: '4px',
-    fontSize: '1rem',
+const backgrounds = {
+    a: 'linear-gradient(135deg, #ff8a8a 0%, #c0392b 100%)',
+    b: 'linear-gradient(135deg, #81ecec 0%, #00897b 100%)',
+    c: 'linear-gradient(135deg, #f4d03f 0%, #c0392b 100%)',
+    d: 'linear-gradient(135deg, #d4a5ff 0%, #6c3483 100%)',
+    e: 'linear-gradient(135deg, #ffb347 0%, #b54708 100%)',
+    f: 'linear-gradient(135deg, #74b9ff 0%, #0652DD 100%)',
 }
+
 
 function getRandomColor() {
     const colors = [
@@ -80,6 +80,7 @@ function App() {
         function selectLetter(e) {
             const key = e.key.toLowerCase()
             if (!letters[key]) return
+            if (blockedRef.current) return
 
             if (key === currentLetter) {
                 const newCount = pressCount + 1
@@ -88,7 +89,6 @@ function App() {
                     setLetterColor(getRandomColor())
                 }
             } else {
-                if (blockedRef.current) return
                 setCurrentLetter(key)
                 setPressCount(1)
                 setLetterColor('#fff')
@@ -97,6 +97,7 @@ function App() {
                 setTimeout(() => {
                     blockedRef.current = false
                     setBlocked(false)
+                    setPressCount(2)
                 }, 2000)
             }
         }
@@ -105,14 +106,16 @@ function App() {
         return () => window.removeEventListener('keydown', selectLetter)
     }, [currentLetter, pressCount])
 
+    const background = currentLetter ? backgrounds[currentLetter] : 'transparent'
+
     if (currentLetter) {
         const LetterComponent = letters[currentLetter]
         const visibleImages = Math.max(0, pressCount - 2)
         return (
-            <>
+            <div className="app-background" style={{ background }}>
                 <LetterComponent showBoard={pressCount >= 2} visibleImages={visibleImages} letterColor={letterColor} />
-                {blocked && <div style={blockedStyle}>Poczekaj dwie sekundy</div>}
-            </>
+                {blocked && <FuseLoader />}
+            </div>
         )
     } else {
         return <WelcomeScreen />

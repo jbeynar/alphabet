@@ -16,6 +16,15 @@
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+.letter-uppercase.letter-appear {
+    animation: letterFadeIn 0.5s ease-out forwards;
+}
+
+@keyframes letterFadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
 .letter-uppercase.color-change {
     animation: colorPop 0.4s ease;
 }
@@ -26,6 +35,10 @@
     font-family: system-ui, sans-serif;
     transition: color 0.4s ease;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.letter-lowercase.letter-appear {
+    animation: letterFadeIn 0.5s ease-out forwards;
 }
 
 .letter-lowercase.color-change {
@@ -42,8 +55,10 @@
     display: flex;
     height: 100vh;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 1rem;
+    padding-left: 4rem;
+    gap: 4rem;
     overflow: hidden;
 }
 
@@ -62,6 +77,10 @@
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+.letter-side-upper.letter-appear {
+    animation: letterFadeIn 0.5s ease-out forwards;
+}
+
 .letter-side-upper.color-change {
     animation: colorPop 0.4s ease;
 }
@@ -72,6 +91,10 @@
     font-family: system-ui, sans-serif;
     transition: color 0.4s ease;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.letter-side-lower.letter-appear {
+    animation: letterFadeIn 0.5s ease-out forwards;
 }
 
 .letter-side-lower.color-change {
