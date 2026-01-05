@@ -23,7 +23,10 @@ function shuffleArray(array) {
 function Letter({ letter, showBoard = false, visibleImages = 0, letterColor = '#fff', lang = 'pl-PL' }) {
     const speechRef = useRef(null)
     const hasSpoken = useRef(null)
-    const letterWords = useMemo(() => shuffleArray(words[letter.toLowerCase()] || []), [letter])
+    const letterWords = useMemo(() => {
+        const letterData = words.find(w => w.letter === letter.toLowerCase())
+        return shuffleArray(letterData?.words || [])
+    }, [letter])
     const [animating, setAnimating] = useState(false)
     const [revealingCard, setRevealingCard] = useState(-1)
     const [isMounted, setIsMounted] = useState(false)
@@ -53,7 +56,7 @@ function Letter({ letter, showBoard = false, visibleImages = 0, letterColor = '#
 
             // Speak the revealed word using ElevenLabs
             if (letterWords[revealedIndex]) {
-                speak(letterWords[revealedIndex].word)
+                speak(letterWords[revealedIndex].pl)
             }
 
             prevVisibleRef.current = visibleImages
@@ -98,15 +101,15 @@ function Letter({ letter, showBoard = false, visibleImages = 0, letterColor = '#
                 </div>
                 <div className="picture-board">
                     {letterWords.map((item, index) => {
-                        const imageUrl = getImageUrl(letter, item.word)
+                        const imageUrl = getImageUrl(letter, item.pl)
                         const isVisible = index < visibleImages
                         const isRevealing = index === revealingCard
                         return (
-                            <div key={item.word} className={`picture-card ${isRevealing ? 'card-reveal' : ''}`}>
+                            <div key={item.pl} className={`picture-card ${isRevealing ? 'card-reveal' : ''}`}>
                                 {isVisible && imageUrl ? (
                                     <>
-                                        <img src={imageUrl} alt={item.word} className="picture-image" />
-                                        <span className="picture-label">{item.word}</span>
+                                        <img src={imageUrl} alt={item.pl} className="picture-image" />
+                                        <span className="picture-label">{item.pl}</span>
                                     </>
                                 ) : (
                                     <div className="picture-placeholder"></div>

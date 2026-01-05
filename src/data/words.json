@@ -1,140 +1,418 @@
-{
-  "a": [
-    { "word": "arbuz", "category": "fruits" },
-    { "word": "autobus", "category": "transport" },
-    { "word": "ananas", "category": "fruits" },
-    { "word": "antylopa", "category": "animals" }
-  ],
-  "b": [
-    { "word": "banan", "category": "fruits" },
-    { "word": "balon", "category": "toys" },
-    { "word": "babcia", "category": "family" },
-    { "word": "bocian", "category": "animals" }
-  ],
-  "c": [
-    { "word": "cebula", "category": "vegetables" },
-    { "word": "ciężarówka", "category": "transport" },
-    { "word": "cytryna", "category": "fruits" },
-    { "word": "ciocia", "category": "family" }
-  ],
-  "d": [
-    { "word": "dom", "category": "building" },
-    { "word": "delfin", "category": "animals" },
-    { "word": "dynia", "category": "vegetables" },
-    { "word": "dziadek", "category": "family" }
-  ],
-  "e": [
-    { "word": "ekran", "category": "objects" },
-    { "word": "eskimos", "category": "food" },
-    { "word": "emu", "category": "animals" },
-    { "word": "etui", "category": "objects" }
-  ],
-  "f": [
-    { "word": "foka", "category": "animals" },
-    { "word": "fiolet", "category": "colors" },
-    { "word": "flaming", "category": "animals" },
-    { "word": "furtka", "category": "building" }
-  ],
-  "g": [
-    { "word": "gruszka", "category": "fruits" },
-    { "word": "gęś", "category": "animals" },
-    { "word": "garaż", "category": "building" },
-    { "word": "groch", "category": "vegetables" }
-  ],
-  "h": [
-    { "word": "hipopotam", "category": "animals" },
-    { "word": "helikopter", "category": "transport" },
-    { "word": "hak", "category": "objects" },
-    { "word": "huśtawka", "category": "toys" }
-  ],
-  "i": [
-    { "word": "igloo", "category": "building" },
-    { "word": "indyk", "category": "animals" },
-    { "word": "igła", "category": "objects" },
-    { "word": "imbir", "category": "vegetables" }
-  ],
-  "j": [
-    { "word": "jabłko", "category": "fruits" },
-    { "word": "jajko", "category": "food" },
-    { "word": "jeż", "category": "animals" },
-    { "word": "jacht", "category": "transport" }
-  ],
-  "k": [
-    { "word": "kot", "category": "animals" },
-    { "word": "koń", "category": "animals" },
-    { "word": "kapusta", "category": "vegetables" },
-    { "word": "karetka", "category": "transport" }
-  ],
-  "l": [
-    { "word": "lew", "category": "animals" },
-    { "word": "lokomotywa", "category": "transport" },
-    { "word": "lampa", "category": "objects" },
-    { "word": "lalka", "category": "toys" }
-  ],
-  "m": [
-    { "word": "mama", "category": "family" },
-    { "word": "malina", "category": "fruits" },
-    { "word": "motyl", "category": "animals" },
-    { "word": "motocykl", "category": "transport" }
-  ],
-  "n": [
-    { "word": "nos", "category": "body" },
-    { "word": "naleśnik", "category": "food" },
-    { "word": "nosorożec", "category": "animals" },
-    { "word": "nożyczki", "category": "objects" }
-  ],
-  "o": [
-    { "word": "okno", "category": "building" },
-    { "word": "ogórek", "category": "vegetables" },
-    { "word": "orzeł", "category": "animals" },
-    { "word": "osa", "category": "animals" }
-  ],
-  "p": [
-    { "word": "pies", "category": "animals" },
-    { "word": "pomidor", "category": "vegetables" },
-    { "word": "pociąg", "category": "transport" },
-    { "word": "papa", "category": "family" }
-  ],
-  "r": [
-    { "word": "rower", "category": "transport" },
-    { "word": "ryba", "category": "animals" },
-    { "word": "rak", "category": "animals" },
-    { "word": "ratusz", "category": "building" }
-  ],
-  "s": [
-    { "word": "słoń", "category": "animals" },
-    { "word": "samolot", "category": "transport" },
-    { "word": "siostra", "category": "family" },
-    { "word": "szkoła", "category": "building" }
-  ],
-  "t": [
-    { "word": "tata", "category": "family" },
-    { "word": "tygrys", "category": "animals" },
-    { "word": "tramwaj", "category": "transport" },
-    { "word": "truskawka", "category": "fruits" }
-  ],
-  "u": [
-    { "word": "usta", "category": "body" },
-    { "word": "ulica", "category": "building" },
-    { "word": "ucho", "category": "body" },
-    { "word": "udo", "category": "body" }
-  ],
-  "w": [
-    { "word": "wąż", "category": "animals" },
-    { "word": "wujek", "category": "family" },
-    { "word": "winogrono", "category": "fruits" },
-    { "word": "wieża", "category": "building" }
-  ],
-  "z": [
-    { "word": "zebra", "category": "animals" },
-    { "word": "zamek", "category": "building" },
-    { "word": "zając", "category": "animals" },
-    { "word": "ziemniak", "category": "vegetables" }
-  ],
-  "ż": [
-    { "word": "żyrafa", "category": "animals" },
-    { "word": "żółw", "category": "animals" },
-    { "word": "żaba", "category": "animals" },
-    { "word": "żagiel", "category": "transport" }
-  ]
-}
+[
+  {
+    "letter": "a",
+    "words": [
+      { "pl": "arbuz", "en": "watermelon", "category": "fruits" },
+      { "pl": "autobus", "en": "bus", "category": "transport" },
+      { "pl": "ananas", "en": "pineapple", "category": "fruits" },
+      { "pl": "auto", "en": "car", "category": "transport" },
+      { "pl": "aparat", "en": "camera", "category": "objects" },
+      { "pl": "akwarium", "en": "aquarium", "category": "objects" },
+      { "pl": "antylopa", "en": "antelope", "category": "animals" },
+      { "pl": "ambulans", "en": "ambulance", "category": "transport" }
+    ]
+  },
+  {
+    "letter": "ą",
+    "words": [
+      { "pl": "bączek", "en": "spinning top", "category": "toys" },
+      { "pl": "ząb", "en": "tooth", "category": "body" },
+      { "pl": "dąb", "en": "oak tree", "category": "nature" },
+      { "pl": "wąż", "en": "snake", "category": "animals" },
+      { "pl": "mąka", "en": "flour", "category": "food" },
+      { "pl": "trąba", "en": "trunk", "category": "animals" },
+      { "pl": "bąk", "en": "bumblebee", "category": "animals" },
+      { "pl": "pączek", "en": "donut", "category": "food" }
+    ]
+  },
+  {
+    "letter": "b",
+    "words": [
+      { "pl": "banan", "en": "banana", "category": "fruits" },
+      { "pl": "balon", "en": "balloon", "category": "toys" },
+      { "pl": "bocian", "en": "stork", "category": "animals" },
+      { "pl": "but", "en": "shoe", "category": "objects" },
+      { "pl": "butelka", "en": "bottle", "category": "objects" },
+      { "pl": "bałwan", "en": "snowman", "category": "toys" },
+      { "pl": "biedronka", "en": "ladybug", "category": "animals" },
+      { "pl": "brokuł", "en": "broccoli", "category": "vegetables" }
+    ]
+  },
+  {
+    "letter": "c",
+    "words": [
+      { "pl": "cebula", "en": "onion", "category": "vegetables" },
+      { "pl": "chleb", "en": "bread", "category": "food" },
+      { "pl": "cukierek", "en": "candy", "category": "food" },
+      { "pl": "cytryna", "en": "lemon", "category": "fruits" },
+      { "pl": "czapka", "en": "cap", "category": "objects" },
+      { "pl": "chmura", "en": "cloud", "category": "nature" },
+      { "pl": "czekolada", "en": "chocolate", "category": "food" },
+      { "pl": "ciasto", "en": "cake", "category": "food" }
+    ]
+  },
+  {
+    "letter": "ć",
+    "words": [
+      { "pl": "ćma", "en": "moth", "category": "animals" },
+      { "pl": "ćma", "en": "moth", "category": "animals" },
+      { "pl": "ćma", "en": "moth", "category": "animals" },
+      { "pl": "ćma", "en": "moth", "category": "animals" },
+      { "pl": "ćma", "en": "moth", "category": "animals" },
+      { "pl": "ćma", "en": "moth", "category": "animals" },
+      { "pl": "ćma", "en": "moth", "category": "animals" },
+      { "pl": "ćma", "en": "moth", "category": "animals" }
+    ]
+  },
+  {
+    "letter": "d",
+    "words": [
+      { "pl": "dom", "en": "house", "category": "building" },
+      { "pl": "delfin", "en": "dolphin", "category": "animals" },
+      { "pl": "dynia", "en": "pumpkin", "category": "vegetables" },
+      { "pl": "drzewo", "en": "tree", "category": "nature" },
+      { "pl": "dinozaur", "en": "dinosaur", "category": "animals" },
+      { "pl": "deszcz", "en": "rain", "category": "nature" },
+      { "pl": "drzwi", "en": "door", "category": "objects" },
+      { "pl": "dzwonek", "en": "bell", "category": "objects" }
+    ]
+  },
+  {
+    "letter": "e",
+    "words": [
+      { "pl": "ekran", "en": "screen", "category": "objects" },
+      { "pl": "emu", "en": "emu", "category": "animals" },
+      { "pl": "eskimos", "en": "ice cream bar", "category": "food" },
+      { "pl": "ekierka", "en": "set square", "category": "objects" },
+      { "pl": "etui", "en": "case", "category": "objects" },
+      { "pl": "elastyk", "en": "rubber band", "category": "objects" },
+      { "pl": "epolety", "en": "epaulettes", "category": "objects" },
+      { "pl": "eskalator", "en": "escalator", "category": "objects" }
+    ]
+  },
+  {
+    "letter": "ę",
+    "words": [
+      { "pl": "ręka", "en": "hand", "category": "body" },
+      { "pl": "węgorz", "en": "eel", "category": "animals" },
+      { "pl": "tęcza", "en": "rainbow", "category": "nature" },
+      { "pl": "gęś", "en": "goose", "category": "animals" },
+      { "pl": "zęby", "en": "teeth", "category": "body" },
+      { "pl": "język", "en": "tongue", "category": "body" },
+      { "pl": "pędzel", "en": "brush", "category": "objects" },
+      { "pl": "bęben", "en": "drum", "category": "objects" }
+    ]
+  },
+  {
+    "letter": "f",
+    "words": [
+      { "pl": "foka", "en": "seal", "category": "animals" },
+      { "pl": "flaming", "en": "flamingo", "category": "animals" },
+      { "pl": "filiżanka", "en": "cup", "category": "objects" },
+      { "pl": "fala", "en": "wave", "category": "nature" },
+      { "pl": "farba", "en": "paint", "category": "objects" },
+      { "pl": "fotel", "en": "armchair", "category": "objects" },
+      { "pl": "flaga", "en": "flag", "category": "objects" },
+      { "pl": "flet", "en": "flute", "category": "objects" }
+    ]
+  },
+  {
+    "letter": "g",
+    "words": [
+      { "pl": "gruszka", "en": "pear", "category": "fruits" },
+      { "pl": "gęś", "en": "goose", "category": "animals" },
+      { "pl": "gitara", "en": "guitar", "category": "objects" },
+      { "pl": "groch", "en": "peas", "category": "vegetables" },
+      { "pl": "góra", "en": "mountain", "category": "nature" },
+      { "pl": "gwiazda", "en": "star", "category": "nature" },
+      { "pl": "grzebień", "en": "comb", "category": "objects" },
+      { "pl": "grzyb", "en": "mushroom", "category": "nature" }
+    ]
+  },
+  {
+    "letter": "h",
+    "words": [
+      { "pl": "hipopotam", "en": "hippopotamus", "category": "animals" },
+      { "pl": "helikopter", "en": "helicopter", "category": "transport" },
+      { "pl": "huśtawka", "en": "swing", "category": "toys" },
+      { "pl": "hak", "en": "hook", "category": "objects" },
+      { "pl": "helm", "en": "helmet", "category": "objects" },
+      { "pl": "hamak", "en": "hammock", "category": "objects" },
+      { "pl": "hot-dog", "en": "hot dog", "category": "food" },
+      { "pl": "herbata", "en": "tea", "category": "food" }
+    ]
+  },
+  {
+    "letter": "i",
+    "words": [
+      { "pl": "igloo", "en": "igloo", "category": "building" },
+      { "pl": "indyk", "en": "turkey", "category": "animals" },
+      { "pl": "igła", "en": "needle", "category": "objects" },
+      { "pl": "imbir", "en": "ginger", "category": "vegetables" },
+      { "pl": "iguana", "en": "iguana", "category": "animals" },
+      { "pl": "ikra", "en": "roe", "category": "food" },
+      { "pl": "iris", "en": "iris flower", "category": "nature" },
+      { "pl": "instrument", "en": "instrument", "category": "objects" }
+    ]
+  },
+  {
+    "letter": "j",
+    "words": [
+      { "pl": "jabłko", "en": "apple", "category": "fruits" },
+      { "pl": "jajko", "en": "egg", "category": "food" },
+      { "pl": "jeż", "en": "hedgehog", "category": "animals" },
+      { "pl": "jacht", "en": "yacht", "category": "transport" },
+      { "pl": "jagoda", "en": "blueberry", "category": "fruits" },
+      { "pl": "jaskółka", "en": "swallow", "category": "animals" },
+      { "pl": "jaszczurka", "en": "lizard", "category": "animals" },
+      { "pl": "jogurt", "en": "yogurt", "category": "food" }
+    ]
+  },
+  {
+    "letter": "k",
+    "words": [
+      { "pl": "kot", "en": "cat", "category": "animals" },
+      { "pl": "koń", "en": "horse", "category": "animals" },
+      { "pl": "kapusta", "en": "cabbage", "category": "vegetables" },
+      { "pl": "karetka", "en": "ambulance", "category": "transport" },
+      { "pl": "klucz", "en": "key", "category": "objects" },
+      { "pl": "kura", "en": "hen", "category": "animals" },
+      { "pl": "krzesło", "en": "chair", "category": "objects" },
+      { "pl": "koszyk", "en": "basket", "category": "objects" }
+    ]
+  },
+  {
+    "letter": "l",
+    "words": [
+      { "pl": "lew", "en": "lion", "category": "animals" },
+      { "pl": "lokomotywa", "en": "locomotive", "category": "transport" },
+      { "pl": "lampa", "en": "lamp", "category": "objects" },
+      { "pl": "lalka", "en": "doll", "category": "toys" },
+      { "pl": "liść", "en": "leaf", "category": "nature" },
+      { "pl": "lis", "en": "fox", "category": "animals" },
+      { "pl": "lodówka", "en": "fridge", "category": "objects" },
+      { "pl": "lody", "en": "ice cream", "category": "food" }
+    ]
+  },
+  {
+    "letter": "ł",
+    "words": [
+      { "pl": "łódka", "en": "boat", "category": "transport" },
+      { "pl": "łabędź", "en": "swan", "category": "animals" },
+      { "pl": "łóżko", "en": "bed", "category": "objects" },
+      { "pl": "łopata", "en": "shovel", "category": "objects" },
+      { "pl": "łąka", "en": "meadow", "category": "nature" },
+      { "pl": "łyżka", "en": "spoon", "category": "objects" },
+      { "pl": "łuk", "en": "bow", "category": "objects" },
+      { "pl": "łoś", "en": "moose", "category": "animals" }
+    ]
+  },
+  {
+    "letter": "m",
+    "words": [
+      { "pl": "malina", "en": "raspberry", "category": "fruits" },
+      { "pl": "motyl", "en": "butterfly", "category": "animals" },
+      { "pl": "motocykl", "en": "motorcycle", "category": "transport" },
+      { "pl": "mleko", "en": "milk", "category": "food" },
+      { "pl": "miś", "en": "teddy bear", "category": "toys" },
+      { "pl": "most", "en": "bridge", "category": "building" },
+      { "pl": "morze", "en": "sea", "category": "nature" },
+      { "pl": "marchewka", "en": "carrot", "category": "vegetables" }
+    ]
+  },
+  {
+    "letter": "n",
+    "words": [
+      { "pl": "nos", "en": "nose", "category": "body" },
+      { "pl": "naleśnik", "en": "pancake", "category": "food" },
+      { "pl": "nosorożec", "en": "rhinoceros", "category": "animals" },
+      { "pl": "nożyczki", "en": "scissors", "category": "objects" },
+      { "pl": "noga", "en": "leg", "category": "body" },
+      { "pl": "naszyjnik", "en": "necklace", "category": "objects" },
+      { "pl": "notes", "en": "notebook", "category": "objects" },
+      { "pl": "namiot", "en": "tent", "category": "objects" }
+    ]
+  },
+  {
+    "letter": "ń",
+    "words": [
+      { "pl": "koń", "en": "horse", "category": "animals" },
+      { "pl": "słoń", "en": "elephant", "category": "animals" },
+      { "pl": "jeleń", "en": "deer", "category": "animals" },
+      { "pl": "kamień", "en": "stone", "category": "nature" },
+      { "pl": "pierścionek", "en": "ring", "category": "objects" },
+      { "pl": "jabłoń", "en": "apple tree", "category": "nature" },
+      { "pl": "pień", "en": "tree trunk", "category": "nature" },
+      { "pl": "płomień", "en": "flame", "category": "nature" }
+    ]
+  },
+  {
+    "letter": "o",
+    "words": [
+      { "pl": "okno", "en": "window", "category": "building" },
+      { "pl": "ogórek", "en": "cucumber", "category": "vegetables" },
+      { "pl": "orzeł", "en": "eagle", "category": "animals" },
+      { "pl": "osa", "en": "wasp", "category": "animals" },
+      { "pl": "oko", "en": "eye", "category": "body" },
+      { "pl": "owca", "en": "sheep", "category": "animals" },
+      { "pl": "ołówek", "en": "pencil", "category": "objects" },
+      { "pl": "owoce", "en": "fruits", "category": "fruits" }
+    ]
+  },
+  {
+    "letter": "ó",
+    "words": [
+      { "pl": "góra", "en": "mountain", "category": "nature" },
+      { "pl": "stół", "en": "table", "category": "objects" },
+      { "pl": "żółw", "en": "turtle", "category": "animals" },
+      { "pl": "wózek", "en": "cart", "category": "objects" },
+      { "pl": "krówka", "en": "candy", "category": "food" },
+      { "pl": "sól", "en": "salt", "category": "food" },
+      { "pl": "król", "en": "king", "category": "objects" },
+      { "pl": "ogród", "en": "garden", "category": "nature" }
+    ]
+  },
+  {
+    "letter": "p",
+    "words": [
+      { "pl": "pies", "en": "dog", "category": "animals" },
+      { "pl": "pomidor", "en": "tomato", "category": "vegetables" },
+      { "pl": "pociąg", "en": "train", "category": "transport" },
+      { "pl": "piłka", "en": "ball", "category": "toys" },
+      { "pl": "ptak", "en": "bird", "category": "animals" },
+      { "pl": "parasol", "en": "umbrella", "category": "objects" },
+      { "pl": "pingwin", "en": "penguin", "category": "animals" },
+      { "pl": "pączek", "en": "donut", "category": "food" }
+    ]
+  },
+  {
+    "letter": "r",
+    "words": [
+      { "pl": "rower", "en": "bicycle", "category": "transport" },
+      { "pl": "ryba", "en": "fish", "category": "animals" },
+      { "pl": "rak", "en": "crab", "category": "animals" },
+      { "pl": "robot", "en": "robot", "category": "toys" },
+      { "pl": "ręka", "en": "hand", "category": "body" },
+      { "pl": "róża", "en": "rose", "category": "nature" },
+      { "pl": "rakieta", "en": "rocket", "category": "transport" },
+      { "pl": "rękawiczka", "en": "glove", "category": "objects" }
+    ]
+  },
+  {
+    "letter": "s",
+    "words": [
+      { "pl": "słoń", "en": "elephant", "category": "animals" },
+      { "pl": "samolot", "en": "airplane", "category": "transport" },
+      { "pl": "słońce", "en": "sun", "category": "nature" },
+      { "pl": "sowa", "en": "owl", "category": "animals" },
+      { "pl": "stół", "en": "table", "category": "objects" },
+      { "pl": "ser", "en": "cheese", "category": "food" },
+      { "pl": "sanki", "en": "sled", "category": "toys" },
+      { "pl": "samochód", "en": "car", "category": "transport" }
+    ]
+  },
+  {
+    "letter": "ś",
+    "words": [
+      { "pl": "śnieg", "en": "snow", "category": "nature" },
+      { "pl": "ślimak", "en": "snail", "category": "animals" },
+      { "pl": "świeca", "en": "candle", "category": "objects" },
+      { "pl": "świnia", "en": "pig", "category": "animals" },
+      { "pl": "śliwka", "en": "plum", "category": "fruits" },
+      { "pl": "śrubokręt", "en": "screwdriver", "category": "objects" },
+      { "pl": "śledź", "en": "herring", "category": "animals" },
+      { "pl": "śmigłowiec", "en": "helicopter", "category": "transport" }
+    ]
+  },
+  {
+    "letter": "t",
+    "words": [
+      { "pl": "tygrys", "en": "tiger", "category": "animals" },
+      { "pl": "tramwaj", "en": "tram", "category": "transport" },
+      { "pl": "truskawka", "en": "strawberry", "category": "fruits" },
+      { "pl": "telewizor", "en": "television", "category": "objects" },
+      { "pl": "torba", "en": "bag", "category": "objects" },
+      { "pl": "talerz", "en": "plate", "category": "objects" },
+      { "pl": "traktor", "en": "tractor", "category": "transport" },
+      { "pl": "tęcza", "en": "rainbow", "category": "nature" }
+    ]
+  },
+  {
+    "letter": "u",
+    "words": [
+      { "pl": "usta", "en": "mouth", "category": "body" },
+      { "pl": "ulica", "en": "street", "category": "building" },
+      { "pl": "ucho", "en": "ear", "category": "body" },
+      { "pl": "ubranie", "en": "clothes", "category": "objects" },
+      { "pl": "umywalka", "en": "sink", "category": "objects" },
+      { "pl": "ul", "en": "beehive", "category": "nature" },
+      { "pl": "udo", "en": "thigh", "category": "body" },
+      { "pl": "układ", "en": "puzzle", "category": "toys" }
+    ]
+  },
+  {
+    "letter": "w",
+    "words": [
+      { "pl": "wąż", "en": "snake", "category": "animals" },
+      { "pl": "winogrono", "en": "grape", "category": "fruits" },
+      { "pl": "wieża", "en": "tower", "category": "building" },
+      { "pl": "woda", "en": "water", "category": "nature" },
+      { "pl": "wózek", "en": "cart", "category": "objects" },
+      { "pl": "wilk", "en": "wolf", "category": "animals" },
+      { "pl": "wiewiórka", "en": "squirrel", "category": "animals" },
+      { "pl": "wiatrak", "en": "windmill", "category": "building" }
+    ]
+  },
+  {
+    "letter": "y",
+    "words": [
+      { "pl": "mysz", "en": "mouse", "category": "animals" },
+      { "pl": "ryba", "en": "fish", "category": "animals" },
+      { "pl": "szyba", "en": "window pane", "category": "objects" },
+      { "pl": "dywan", "en": "carpet", "category": "objects" },
+      { "pl": "grzyb", "en": "mushroom", "category": "nature" },
+      { "pl": "szynka", "en": "ham", "category": "food" },
+      { "pl": "ryż", "en": "rice", "category": "food" },
+      { "pl": "byk", "en": "bull", "category": "animals" }
+    ]
+  },
+  {
+    "letter": "z",
+    "words": [
+      { "pl": "zebra", "en": "zebra", "category": "animals" },
+      { "pl": "zamek", "en": "castle", "category": "building" },
+      { "pl": "zając", "en": "rabbit", "category": "animals" },
+      { "pl": "ziemniak", "en": "potato", "category": "vegetables" },
+      { "pl": "zegar", "en": "clock", "category": "objects" },
+      { "pl": "zabawka", "en": "toy", "category": "toys" },
+      { "pl": "ząb", "en": "tooth", "category": "body" },
+      { "pl": "zupa", "en": "soup", "category": "food" }
+    ]
+  },
+  {
+    "letter": "ź",
+    "words": [
+      { "pl": "źrebak", "en": "foal", "category": "animals" },
+      { "pl": "źródło", "en": "spring", "category": "nature" },
+      { "pl": "źdźbło", "en": "blade of grass", "category": "nature" },
+      { "pl": "źrenica", "en": "pupil", "category": "body" },
+      { "pl": "źrebak", "en": "foal", "category": "animals" },
+      { "pl": "źródło", "en": "spring", "category": "nature" },
+      { "pl": "źdźbło", "en": "blade of grass", "category": "nature" },
+      { "pl": "źrenica", "en": "pupil", "category": "body" }
+    ]
+  },
+  {
+    "letter": "ż",
+    "words": [
+      { "pl": "żyrafa", "en": "giraffe", "category": "animals" },
+      { "pl": "żółw", "en": "turtle", "category": "animals" },
+      { "pl": "żaba", "en": "frog", "category": "animals" },
+      { "pl": "żagiel", "en": "sail", "category": "transport" },
+      { "pl": "żelazko", "en": "iron", "category": "objects" },
+      { "pl": "żarówka", "en": "light bulb", "category": "objects" },
+      { "pl": "żuraw", "en": "crane bird", "category": "animals" },
+      { "pl": "żołądź", "en": "acorn", "category": "nature" }
+    ]
+  }
+]
