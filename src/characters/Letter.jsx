@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useMemo } from 'react'
 import Speech from 'speak-tts'
 import './Letter.css'
 import words from '../data/words.json'
+import { speak } from '../utils/elevenlabs'
 
 const images = import.meta.glob('../data/images/**/*.png', { eager: true })
 
@@ -46,13 +47,20 @@ function Letter({ letter, showBoard = false, visibleImages = 0, letterColor = '#
 
     useEffect(() => {
         if (visibleImages > prevVisibleRef.current) {
-            setRevealingCard(visibleImages - 1)
+            const revealedIndex = visibleImages - 1
+            setRevealingCard(revealedIndex)
             const timer = setTimeout(() => setRevealingCard(-1), 400)
+
+            // Speak the revealed word using ElevenLabs
+            if (letterWords[revealedIndex]) {
+                speak(letterWords[revealedIndex].word)
+            }
+
             prevVisibleRef.current = visibleImages
             return () => clearTimeout(timer)
         }
         prevVisibleRef.current = visibleImages
-    }, [visibleImages])
+    }, [visibleImages, letterWords])
 
     const textStyle = { color: letterColor }
     const appearClass = !isMounted ? 'letter-appear' : ''
