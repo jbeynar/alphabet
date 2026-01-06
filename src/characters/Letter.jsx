@@ -7,7 +7,7 @@ import { speak } from '../utils/elevenlabs'
 const images = import.meta.glob('../data/images/**/*.png', { eager: true })
 
 function getImageUrl(letter, word) {
-    const path = `../data/images/${letter.toUpperCase()}/${word}.png`
+    const path = `../data/images/${letter.toLowerCase()}/${word}.png`
     return images[path]?.default
 }
 

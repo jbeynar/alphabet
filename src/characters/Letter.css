@@ -103,8 +103,8 @@
 
 .picture-board {
     display: grid;
-    grid-template-columns: repeat(4, 12vw);
-    grid-template-rows: repeat(2, 12vw);
+    grid-template-columns: repeat(2, 20vw);
+    grid-template-rows: repeat(2, 20vw);
     gap: 1vw;
     padding: 1vw;
 }
@@ -118,8 +118,8 @@
     border-radius: 0.5vw;
     padding: 0.5vw;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    width: 12vw;
-    height: 12vw;
+    width: 20vw;
+    height: 20vw;
 }
 
 .picture-card.card-reveal {
