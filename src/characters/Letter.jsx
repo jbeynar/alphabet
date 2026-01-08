@@ -20,6 +20,17 @@ function shuffleArray(array) {
     return shuffled
 }
 
+function highlightLetter(word, letter) {
+    const lowerLetter = letter.toLowerCase()
+    return word.split('').map((char, index) => {
+        const displayChar = index === 0 ? char.toUpperCase() : char
+        if (char.toLowerCase() === lowerLetter) {
+            return <span key={index} className="letter-highlight">{displayChar}</span>
+        }
+        return displayChar
+    })
+}
+
 function Letter({ letter, showBoard = false, visibleImages = 0, letterColor = '#fff', lang = 'pl-PL' }) {
     const speechRef = useRef(null)
     const hasSpoken = useRef(null)
@@ -109,7 +120,7 @@ function Letter({ letter, showBoard = false, visibleImages = 0, letterColor = '#
                                 {isVisible && imageUrl ? (
                                     <>
                                         <img src={imageUrl} alt={item.pl} className="picture-image" />
-                                        <span className="picture-label">{item.pl}</span>
+                                        <span className="picture-label">{highlightLetter(item.pl, letter)}</span>
                                     </>
                                 ) : (
                                     <div className="picture-placeholder"></div>
