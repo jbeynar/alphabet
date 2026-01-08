@@ -85,6 +85,7 @@ function App() {
     const [currentLetter, setCurrentLetter] = useState('')
     const [pressCount, setPressCount] = useState(0)
     const [blocked, setBlocked] = useState(false)
+    const [showLoader, setShowLoader] = useState(false)
     const [letterColor, setLetterColor] = useState('#fff')
     const blockedRef = useRef(false)
 
@@ -100,17 +101,28 @@ function App() {
                 if (newCount > 6) {
                     setLetterColor(getRandomColor())
                 }
+                // Block for 1s when revealing an image (pressCount 3-6 reveals images)
+                if (newCount >= 3 && newCount <= 6) {
+                    blockedRef.current = true
+                    setBlocked(true)
+                    setTimeout(() => {
+                        blockedRef.current = false
+                        setBlocked(false)
+                    }, 1000)
+                }
             } else {
                 setCurrentLetter(key)
                 setPressCount(1)
                 setLetterColor('#fff')
                 blockedRef.current = true
                 setBlocked(true)
+                setShowLoader(true)
                 setTimeout(() => {
                     blockedRef.current = false
                     setBlocked(false)
+                    setShowLoader(false)
                     setPressCount(2)
-                }, 2000)
+                }, 1000)
             }
         }
 
@@ -125,7 +137,7 @@ function App() {
         return (
             <div className="app-background" style={{ background }}>
                 <Letter letter={currentLetter.toUpperCase()} showBoard={pressCount >= 2} visibleImages={visibleImages} letterColor={letterColor} />
-                {blocked && <FuseLoader />}
+                {showLoader && <FuseLoader />}
             </div>
         )
     } else {

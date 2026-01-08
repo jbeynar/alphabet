@@ -149,7 +149,7 @@
 }
 
 .picture-label {
-    font-size: 1.4vw;
+    font-size: 1.8vw;
     font-weight: 500;
     font-family: system-ui, sans-serif;
     color: #fff;
@@ -160,9 +160,22 @@
 }
 
 .letter-highlight {
-    text-decoration: underline;
-    text-decoration-thickness: 0.15vw;
-    text-underline-offset: 0.2vw;
+    animation: highlightFlash 2s ease-out forwards;
+}
+
+@keyframes highlightFlash {
+    0% {
+        color: red;
+    }
+    33% {
+        color: yellow;
+    }
+    66% {
+        color: dimgrey;
+    }
+    100% {
+        color: #fff;
+    }
 }
 
 .picture-placeholder {
