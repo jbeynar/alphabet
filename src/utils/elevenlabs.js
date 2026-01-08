@@ -1,7 +1,21 @@
+import { getCachedAudio, setCachedAudio, hasAudio } from './audioCache'
+
 const API_KEY = 'sk_ac802e9c250bd364a1c88242ff0f69d72850d47339b42c57'
 const VOICE_ID = 'aAY9hMI6VU335JUszdRs' // Charlotte - multilingual voice
 
 export async function speak(text) {
+    // Check cache first
+    if (hasAudio(text)) {
+        const cachedBlob = getCachedAudio(text)
+        const audioUrl = URL.createObjectURL(cachedBlob)
+        const audio = new Audio(audioUrl)
+        audio.volume = 1.0
+        audio.onended = () => URL.revokeObjectURL(audioUrl)
+        await audio.play()
+        return
+    }
+
+    // Not in cache - make API call
     try {
         const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}`, {
             method: 'POST',
@@ -26,9 +40,13 @@ export async function speak(text) {
         }
 
         const audioBlob = await response.blob()
+
+        // Store in cache for future use
+        setCachedAudio(text, audioBlob)
+
         const audioUrl = URL.createObjectURL(audioBlob)
         const audio = new Audio(audioUrl)
-        audio.volume = 1.0 // 0.0 (mute) to 1.0 (max)
+        audio.volume = 1.0
 
         audio.onended = () => {
             URL.revokeObjectURL(audioUrl)
