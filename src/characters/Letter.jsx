@@ -31,7 +31,7 @@ function highlightLetter(word, letter) {
     })
 }
 
-function Letter({ letter, showBoard = false, visibleImages = 0, letterColor = '#fff', lang = 'pl-PL' }) {
+function Letter({ letter, showBoard = false, visibleImages = 0, cycleStep = -1, letterColor = '#fff', lang = 'pl-PL' }) {
     const speechRef = useRef(null)
     const hasSpoken = useRef(null)
     const letterWords = useMemo(() => {
@@ -75,6 +75,16 @@ function Letter({ letter, showBoard = false, visibleImages = 0, letterColor = '#
         }
         prevVisibleRef.current = visibleImages
     }, [visibleImages, letterWords, lang])
+
+    // Once every image is revealed, each further press highlights the next card and reads its word
+    useEffect(() => {
+        if (cycleStep < 0 || letterWords.length === 0) return
+        const index = cycleStep % letterWords.length
+        setRevealingCard(index)
+        const timer = setTimeout(() => setRevealingCard(-1), 400)
+        speakWord(letterWords[index].pl, { lang })
+        return () => clearTimeout(timer)
+    }, [cycleStep, letterWords, lang])
 
     const textStyle = { color: letterColor }
     const appearClass = !isMounted ? 'letter-appear' : ''

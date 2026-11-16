@@ -101,8 +101,9 @@ function App() {
                 if (newCount > 6) {
                     setLetterColor(getRandomColor())
                 }
-                // Block for 1s when revealing an image (pressCount 3-6 reveals images)
-                if (newCount >= 3 && newCount <= 6) {
+                // Block for 1s when revealing an image (3-6) or cycling through
+                // the revealed images and reading their words (7+)
+                if (newCount >= 3) {
                     blockedRef.current = true
                     setBlocked(true)
                     setTimeout(() => {
@@ -134,9 +135,11 @@ function App() {
 
     if (currentLetter) {
         const visibleImages = Math.max(0, pressCount - 2)
+        // After all images are revealed, every further press walks through them again
+        const cycleStep = Math.max(-1, pressCount - 7)
         return (
             <div className="app-background" style={{ background }}>
-                <Letter letter={currentLetter.toUpperCase()} showBoard={pressCount >= 2} visibleImages={visibleImages} letterColor={letterColor} />
+                <Letter letter={currentLetter.toUpperCase()} showBoard={pressCount >= 2} visibleImages={visibleImages} cycleStep={cycleStep} letterColor={letterColor} />
                 {showLoader && <FuseLoader />}
             </div>
         )
