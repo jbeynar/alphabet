@@ -7,7 +7,6 @@ const GAMES = [
 ]
 
 function WelcomeScreen({ onSelectGame }) {
-    // Keys 1..n pick a game, so the app stays keyboard-driven like the games themselves
     useEffect(() => {
         function pickByNumber(e) {
             const index = Number(e.key) - 1

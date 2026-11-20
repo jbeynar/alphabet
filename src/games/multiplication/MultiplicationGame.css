@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
     font-family: system-ui, sans-serif;
 }
 
@@ -15,11 +15,315 @@
 .multiplication-title {
     font-size: 4rem;
     font-weight: 700;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.5rem 0;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .multiplication-subtitle {
     font-size: 1.5rem;
     opacity: 0.9;
+    margin-bottom: 2.5rem;
+}
+
+.settings-fields {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.number-field {
+    width: 220px;
+    padding: 1.25rem 1rem 1rem;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #7a4b00;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    border: 4px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.number-field-active {
+    border-color: #ff6b6b;
+    transform: translateY(-4px);
+}
+
+.number-field-label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.number-field-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.number-field-button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #ffb347;
+    color: #fff;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.1s ease, background 0.1s ease;
+}
+
+.number-field-button:hover {
+    background: #ff9f1c;
+    transform: scale(1.08);
+}
+
+.number-field-input {
+    width: 84px;
+    height: 72px;
+    border: none;
+    border-radius: 16px;
+    background: #fff4dc;
+    color: #7a4b00;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    outline: none;
+}
+
+.number-field-input:focus {
+    box-shadow: inset 0 0 0 3px #ff6b6b;
+}
+
+.number-field-range {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+.settings-preview {
+    margin: 2rem 0 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.settings-start {
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 999px;
+    background: #2ecc71;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.settings-start:hover,
+.settings-start:focus-visible {
+    background: #27ae60;
+    transform: scale(1.05);
+    outline: none;
+}
+
+.multiplication-play {
+    position: relative;
+    width: 100%;
+    padding: 0 2rem 7rem;
+}
+
+.question-equation {
+    font-size: 7rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+    margin-bottom: 3rem;
+}
+
+.question-times,
+.question-equals {
+    opacity: 0.8;
+    margin: 0 0.1em;
+}
+
+.question-blank {
+    display: inline-block;
+    min-width: 1.4em;
+    margin-left: 0.15em;
+    color: #fff4dc;
+}
+
+.answers {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.answer {
+    position: relative;
+    min-width: 170px;
+    height: 170px;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 6px solid transparent;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #7a4b00;
+    font-size: 4rem;
+    font-weight: 800;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.answer:hover:not(:disabled) {
+    transform: translateY(-6px) scale(1.04);
+}
+
+.answer:disabled {
+    cursor: default;
+}
+
+.answer-number {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ffb347;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.answer-correct {
+    background: #2ecc71;
+    border-color: #1e8449;
+    color: #fff;
+    transform: scale(1.08);
+}
+
+.answer-correct .answer-number {
+    background: #1e8449;
+}
+
+.answer-wrong {
+    background: #e74c3c;
+    border-color: #a93226;
+    color: #fff;
+    animation: answer-shake 0.4s ease;
+}
+
+.answer-wrong .answer-number {
+    background: #a93226;
+}
+
+.answer-dimmed {
+    opacity: 0.4;
+}
+
+@keyframes answer-shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+
+.face-feedback {
+    position: fixed;
+    top: 8vh;
+    right: 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 1rem 2rem 1.25rem;
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.3);
+    animation: face-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+}
+
+.face-emoji {
+    font-size: 8rem;
+    line-height: 1;
+}
+
+.face-text {
+    font-size: 1.75rem;
+    font-weight: 800;
+}
+
+.face-happy .face-text {
+    color: #1e8449;
+}
+
+.face-sad .face-text {
+    color: #c0392b;
+}
+
+@keyframes face-pop {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.history-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.6rem 1.5rem;
+    background: rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(6px);
+}
+
+.history-faces {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.history-face {
+    font-size: 2.6rem;
+    line-height: 1;
+    animation: face-pop 0.3s ease;
+}
+
+.history-face-bad {
+    filter: saturate(0.8);
+}
+
+.history-score {
+    position: absolute;
+    right: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
 }

@@ -39,45 +39,44 @@ const backgrounds = {
     ż: 'linear-gradient(135deg, #badc58 0%, #6ab04c 100%)',
 }
 
-
 function getRandomColor() {
     const colors = [
-        '#FF6B6B', // jasny czerwony
-        '#FFE66D', // słoneczny żółty
-        '#4ECDC4', // turkusowy
-        '#FF9F43', // pomarańczowy
-        '#A8E6CF', // miętowy
-        '#FF85A2', // różowy
-        '#88D8B0', // zielony pastelowy
-        '#FFCC5C', // złoty żółty
-        '#96E6A1', // jasny zielony
-        '#DDA0DD', // śliwkowy pastelowy
-        '#87CEEB', // błękitny
-        '#F8B500', // żółty słonecznikowy
-        '#FFB6C1', // jasny róż
-        '#98D8C8', // morski
-        '#F7DC6F', // kanarkowy
-        '#BB8FCE', // lawendowy
-        '#85C1E9', // niebieski pastelowy
-        '#F1948A', // koralowy
-        '#82E0AA', // szmaragdowy jasny
-        '#F5B041', // mandarynkowy
-        '#D7BDE2', // fioletowy pastelowy
-        '#76D7C4', // akwamaryna
-        '#F9E79F', // kremowy żółty
-        '#EC7063', // malinowy
-        '#73C6B6', // jadeitowy
-        '#FAD7A0', // brzoskwiniowy
-        '#C39BD3', // orchidea
-        '#7FB3D5', // chabrowy jasny
-        '#F0B27A', // morelowy
-        '#ABEBC6', // pistacjowy
-        '#E59866', // cynamonowy
-        '#AED6F1', // baby blue
-        '#F5B7B1', // pudrowy róż
-        '#D5F5E3', // miętowa biel
-        '#FADBD8', // różany
-        '#D4E6F1', // lodowy błękit
+        '#FF6B6B',
+        '#FFE66D',
+        '#4ECDC4',
+        '#FF9F43',
+        '#A8E6CF',
+        '#FF85A2',
+        '#88D8B0',
+        '#FFCC5C',
+        '#96E6A1',
+        '#DDA0DD',
+        '#87CEEB',
+        '#F8B500',
+        '#FFB6C1',
+        '#98D8C8',
+        '#F7DC6F',
+        '#BB8FCE',
+        '#85C1E9',
+        '#F1948A',
+        '#82E0AA',
+        '#F5B041',
+        '#D7BDE2',
+        '#76D7C4',
+        '#F9E79F',
+        '#EC7063',
+        '#73C6B6',
+        '#FAD7A0',
+        '#C39BD3',
+        '#7FB3D5',
+        '#F0B27A',
+        '#ABEBC6',
+        '#E59866',
+        '#AED6F1',
+        '#F5B7B1',
+        '#D5F5E3',
+        '#FADBD8',
+        '#D4E6F1',
     ]
     return colors[Math.floor(Math.random() * colors.length)]
 }
@@ -106,8 +105,6 @@ function AlphabetGame({ onExit }) {
                 if (newCount > 6) {
                     setLetterColor(getRandomColor())
                 }
-                // Block for 1s when revealing an image (3-6) or cycling through
-                // the revealed images and reading their words (7+)
                 if (newCount >= 3) {
                     blockedRef.current = true
                     setBlocked(true)
@@ -141,7 +138,6 @@ function AlphabetGame({ onExit }) {
     let screen
     if (currentLetter) {
         const visibleImages = Math.max(0, pressCount - 2)
-        // After all images are revealed, every further press walks through them again
         const cycleStep = Math.max(-1, pressCount - 7)
         screen = (
             <div className="app-background" style={{ background }}>

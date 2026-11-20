@@ -23,7 +23,6 @@ function Keyboard() {
             className="keyboard-svg"
             aria-label="Klawiatura"
         >
-            {/* Keyboard frame */}
             <rect
                 x="0"
                 y="0"
@@ -35,7 +34,6 @@ function Keyboard() {
                 strokeWidth="2"
             />
 
-            {/* Letter keys */}
             {rows.map((row, rowIndex) => (
                 row.keys.map((key, keyIndex) => {
                     const x = padding + row.offset + keyIndex * (keyWidth + gap)
@@ -69,7 +67,6 @@ function Keyboard() {
                 })
             ))}
 
-            {/* Spacebar */}
             {(() => {
                 const spaceWidth = 200
                 const spaceX = (totalWidth - spaceWidth) / 2

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useMemo } from 'react'
 import Speech from 'speak-tts'
 import './Letter.css'
 import words from '../data/words.json'
-import { speakWord } from '../utils/browserSpeech'
+import { speakWord } from '../../../utils/browserSpeech'
 
 const images = import.meta.glob('../data/images/**/*.png', { eager: true })
 
@@ -65,7 +65,6 @@ function Letter({ letter, showBoard = false, visibleImages = 0, cycleStep = -1, 
             setRevealingCard(revealedIndex)
             const timer = setTimeout(() => setRevealingCard(-1), 400)
 
-            // Speak the revealed word using the browser's speech synthesis
             if (letterWords[revealedIndex]) {
                 speakWord(letterWords[revealedIndex].pl, { lang })
             }
@@ -76,7 +75,6 @@ function Letter({ letter, showBoard = false, visibleImages = 0, cycleStep = -1, 
         prevVisibleRef.current = visibleImages
     }, [visibleImages, letterWords, lang])
 
-    // Once every image is revealed, each further press highlights the next card and reads its word
     useEffect(() => {
         if (cycleStep < 0 || letterWords.length === 0) return
         const index = cycleStep % letterWords.length

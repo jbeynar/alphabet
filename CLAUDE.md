@@ -21,6 +21,7 @@ src/
   components/                  - Shared across games
     WelcomeScreen.jsx          - Game picker (GAMES list: alphabet, multiplication)
     BackButton.jsx             - Corner button returning to the game picker (same as Escape)
+  utils/browserSpeech.js       - Web Speech API wrapper (speakWord), used by both games
   games/
     alphabet/
       AlphabetGame.jsx         - Alphabet game: key handling, letter/press-count state (Escape exits)
@@ -31,9 +32,16 @@ src/
         Letter.jsx             - Letter view: big letter, word images board, speech
       data/words.json          - Polish alphabet with 4 words per letter
       data/images/<letter>/    - Word illustrations (loaded via import.meta.glob)
-      utils/browserSpeech.js   - Web Speech API wrapper (speakWord)
     multiplication/
-      MultiplicationGame.jsx   - Multiplication game (placeholder for now, Escape exits)
+      MultiplicationGame.jsx   - Multiplication game: settings -> play phases, keys a..h answer, Escape exits
+      components/
+        SettingsScreen.jsx     - Three NumberFields (max first factor, max second factor, answer count 2–8) + Start
+        NumberField.jsx        - Big numeric box: -/+ buttons, typed digits, arrow keys, min/max clamp
+        Question.jsx           - "a × b =" with numbered answer cards (green correct / red wrong)
+        FaceFeedback.jsx       - Big happy/sad face shown after an answer
+        HistoryBar.jsx         - Row of small faces at the bottom (session-only history)
+      utils/questions.js       - generateQuestion(settings, previous): factors, distractors, shuffle
+      utils/sounds.js          - playGentleWrong(): soft Web Audio tone for a wrong answer
 index.html                     - Entry HTML (global reset + .app-background)
 ```
 

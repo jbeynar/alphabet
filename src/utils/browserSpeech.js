@@ -16,8 +16,6 @@ function loadVoices() {
     return voicesPromise
 }
 
-// Higher-quality voices are much clearer for a child than the basic system ones.
-// Score each candidate so the best available Polish voice wins.
 const QUALITY_HINTS = ['premium', 'enhanced', 'natural', 'neural', 'google', 'microsoft', 'zosia', 'ewa']
 
 function scoreVoice(voice, code, short) {
@@ -53,7 +51,6 @@ export async function speakWord(text, { lang = 'pl-PL', rate = 0.7, pitch = 1 } 
     synth.cancel()
     const voices = await loadVoices()
 
-    // A short lead-in pause keeps the first syllable from being clipped by the engine.
     const utterance = new SpeechSynthesisUtterance(`​ ${text}.`)
     utterance.lang = lang
     utterance.voice = pickVoice(voices, lang)
