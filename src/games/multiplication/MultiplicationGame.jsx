@@ -9,7 +9,7 @@ import { playGentleWrong } from './utils/sounds'
 import { speakWord } from '../../utils/browserSpeech'
 import './MultiplicationGame.css'
 
-const DEFAULT_SETTINGS = { maxA: 5, maxB: 5, answerCount: 3 }
+const DEFAULT_SETTINGS = { maxA: 7, maxB: 7, answerCount: 4 }
 const NEXT_QUESTION_DELAY = 3000
 
 function MultiplicationGame({ onExit }) {
