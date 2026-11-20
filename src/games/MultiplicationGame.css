@@ -1,0 +1,25 @@
+.multiplication-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+    font-family: system-ui, sans-serif;
+}
+
+.multiplication-content {
+    text-align: center;
+    color: #fff;
+}
+
+.multiplication-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.multiplication-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}

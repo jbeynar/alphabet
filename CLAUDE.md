@@ -21,6 +21,7 @@ src/
     FuseLoader.jsx         - 1s progress bar shown when a letter changes
   games/
     AlphabetGame.jsx       - Alphabet game: key handling, letter/press-count state (Escape exits)
+    MultiplicationGame.jsx - Multiplication game (placeholder for now, Escape exits)
   characters/Letter.jsx    - Letter view: big letter, word images board, speech
   data/words.json          - Polish alphabet with 4 words per letter
   data/images/<letter>/    - Word illustrations (loaded via import.meta.glob)

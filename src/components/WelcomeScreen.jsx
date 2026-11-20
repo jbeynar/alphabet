@@ -3,7 +3,7 @@ import './WelcomeScreen.css'
 
 const GAMES = [
     { id: 'alphabet', title: 'Alfabet', emoji: '🔤', available: true },
-    { id: 'multiplication', title: 'Mnożenie', emoji: '✖️', available: false },
+    { id: 'multiplication', title: 'Mnożenie', emoji: '✖️', available: true },
 ]
 
 function WelcomeScreen({ onSelectGame }) {
