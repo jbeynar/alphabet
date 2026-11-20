@@ -1,8 +1,8 @@
 import {useState, useEffect, useRef} from 'react'
-import Letter from '../characters/Letter'
-import AlphabetWelcomeScreen from '../components/AlphabetWelcomeScreen'
-import FuseLoader from '../components/FuseLoader'
-import BackButton from '../components/BackButton'
+import Letter from './components/Letter'
+import AlphabetWelcomeScreen from './components/AlphabetWelcomeScreen'
+import FuseLoader from './components/FuseLoader'
+import BackButton from '../../components/BackButton'
 
 const backgrounds = {
     a: 'linear-gradient(135deg, #ff8a8a 0%, #c0392b 100%)',

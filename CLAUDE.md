@@ -10,27 +10,35 @@ React 19 single-page application using Vite 6.
 
 ## Structure
 
+Each game lives in its own directory under `src/games/` and owns everything
+specific to it (components, data, assets, helpers). `src/components/` holds
+only what is shared across games.
+
 ```
 src/
-  main.jsx                 - React root mount
-  App.jsx                  - Game router: WelcomeScreen (game picker) -> selected game
-  components/
-    WelcomeScreen.jsx      - Game picker (GAMES list: alphabet, multiplication)
-    AlphabetWelcomeScreen  - Intro screen of the alphabet game (title + decorative keyboard)
-    Keyboard.jsx           - Decorative SVG keyboard
-    FuseLoader.jsx         - 1s progress bar shown when a letter changes
-    BackButton.jsx         - Corner button returning to the game picker (same as Escape)
+  main.jsx                     - React root mount
+  App.jsx                      - Game router: WelcomeScreen (game picker) -> selected game
+  components/                  - Shared across games
+    WelcomeScreen.jsx          - Game picker (GAMES list: alphabet, multiplication)
+    BackButton.jsx             - Corner button returning to the game picker (same as Escape)
   games/
-    AlphabetGame.jsx       - Alphabet game: key handling, letter/press-count state (Escape exits)
-    MultiplicationGame.jsx - Multiplication game (placeholder for now, Escape exits)
-  characters/Letter.jsx    - Letter view: big letter, word images board, speech
-  data/words.json          - Polish alphabet with 4 words per letter
-  data/images/<letter>/    - Word illustrations (loaded via import.meta.glob)
-  utils/browserSpeech.js   - Web Speech API wrapper (speakWord)
-index.html                 - Entry HTML (global reset + .app-background)
+    alphabet/
+      AlphabetGame.jsx         - Alphabet game: key handling, letter/press-count state (Escape exits)
+      components/
+        AlphabetWelcomeScreen  - Intro screen of the alphabet game (title + decorative keyboard)
+        Keyboard.jsx           - Decorative SVG keyboard
+        FuseLoader.jsx         - 1s progress bar shown when a letter changes
+        Letter.jsx             - Letter view: big letter, word images board, speech
+      data/words.json          - Polish alphabet with 4 words per letter
+      data/images/<letter>/    - Word illustrations (loaded via import.meta.glob)
+      utils/browserSpeech.js   - Web Speech API wrapper (speakWord)
+    multiplication/
+      MultiplicationGame.jsx   - Multiplication game (placeholder for now, Escape exits)
+index.html                     - Entry HTML (global reset + .app-background)
 ```
 
-Adding a game: create `src/games/<Name>Game.jsx`, add an entry to `GAMES` in
+Adding a game: create `src/games/<name>/<Name>Game.jsx` (plus any
+game-specific components/data next to it), add an entry to `GAMES` in
 `src/components/WelcomeScreen.jsx` and a branch in `src/App.jsx`.
 
 ## Stack

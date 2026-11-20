@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import BackButton from '../components/BackButton'
+import BackButton from '../../components/BackButton'
 import './MultiplicationGame.css'
 
 function MultiplicationGame({ onExit }) {

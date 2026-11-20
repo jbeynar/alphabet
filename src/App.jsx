@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import WelcomeScreen from './components/WelcomeScreen'
-import AlphabetGame from './games/AlphabetGame'
-import MultiplicationGame from './games/MultiplicationGame'
+import AlphabetGame from './games/alphabet/AlphabetGame'
+import MultiplicationGame from './games/multiplication/MultiplicationGame'
 
 function App() {
     const [game, setGame] = useState(null)
