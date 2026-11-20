@@ -2,6 +2,7 @@ import {useState, useEffect, useRef} from 'react'
 import Letter from '../characters/Letter'
 import AlphabetWelcomeScreen from '../components/AlphabetWelcomeScreen'
 import FuseLoader from '../components/FuseLoader'
+import BackButton from '../components/BackButton'
 
 const backgrounds = {
     a: 'linear-gradient(135deg, #ff8a8a 0%, #c0392b 100%)',
@@ -137,19 +138,27 @@ function AlphabetGame({ onExit }) {
 
     const background = currentLetter ? backgrounds[currentLetter] : 'transparent'
 
+    let screen
     if (currentLetter) {
         const visibleImages = Math.max(0, pressCount - 2)
         // After all images are revealed, every further press walks through them again
         const cycleStep = Math.max(-1, pressCount - 7)
-        return (
+        screen = (
             <div className="app-background" style={{ background }}>
                 <Letter letter={currentLetter.toUpperCase()} showBoard={pressCount >= 2} visibleImages={visibleImages} cycleStep={cycleStep} letterColor={letterColor} />
                 {showLoader && <FuseLoader />}
             </div>
         )
     } else {
-        return <AlphabetWelcomeScreen />
+        screen = <AlphabetWelcomeScreen />
     }
+
+    return (
+        <>
+            <BackButton onClick={onExit} />
+            {screen}
+        </>
+    )
 
 }
 

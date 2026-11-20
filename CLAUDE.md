@@ -19,6 +19,7 @@ src/
     AlphabetWelcomeScreen  - Intro screen of the alphabet game (title + decorative keyboard)
     Keyboard.jsx           - Decorative SVG keyboard
     FuseLoader.jsx         - 1s progress bar shown when a letter changes
+    BackButton.jsx         - Corner button returning to the game picker (same as Escape)
   games/
     AlphabetGame.jsx       - Alphabet game: key handling, letter/press-count state (Escape exits)
     MultiplicationGame.jsx - Multiplication game (placeholder for now, Escape exits)
