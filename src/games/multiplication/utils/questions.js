@@ -11,21 +11,30 @@ function shuffleArray(array) {
     return shuffled
 }
 
-function pickFactors({ maxA, maxB }, previous) {
-    let a = randomInt(1, maxA)
-    let b = randomInt(1, maxB)
-    if (previous && maxA * maxB > 1) {
+function minFactor(max, difficulty) {
+    return difficulty === 'hard' ? Math.max(1, Math.ceil((max * 2) / 5)) : 1
+}
+
+export function factorRange({ maxA, maxB, difficulty }) {
+    return { minA: minFactor(maxA, difficulty), maxA, minB: minFactor(maxB, difficulty), maxB }
+}
+
+function pickFactors(range, previous) {
+    const { minA, maxA, minB, maxB } = range
+    let a = randomInt(minA, maxA)
+    let b = randomInt(minB, maxB)
+    if (previous && (maxA - minA + 1) * (maxB - minB + 1) > 1) {
         let guard = 0
         while (a === previous.a && b === previous.b && guard < 20) {
-            a = randomInt(1, maxA)
-            b = randomInt(1, maxB)
+            a = randomInt(minA, maxA)
+            b = randomInt(minB, maxB)
             guard++
         }
     }
     return { a, b }
 }
 
-function buildDistractors(a, b, correct, count, { maxA, maxB }) {
+function buildDistractors(a, b, correct, count, { minA, maxA, minB, maxB }) {
     const picked = new Set()
     const tryAdd = value => {
         if (picked.size >= count) return
@@ -43,7 +52,7 @@ function buildDistractors(a, b, correct, count, { maxA, maxB }) {
 
     let guard = 0
     while (picked.size < count && guard < 200) {
-        tryAdd(randomInt(1, maxA) * randomInt(1, maxB))
+        tryAdd(randomInt(minA, maxA) * randomInt(minB, maxB))
         guard++
     }
     guard = 0
@@ -55,9 +64,10 @@ function buildDistractors(a, b, correct, count, { maxA, maxB }) {
 }
 
 export function generateQuestion(settings, previous = null) {
-    const { a, b } = pickFactors(settings, previous)
+    const range = factorRange(settings)
+    const { a, b } = pickFactors(range, previous)
     const correct = a * b
-    const distractors = buildDistractors(a, b, correct, settings.answerCount - 1, settings)
+    const distractors = buildDistractors(a, b, correct, settings.answerCount - 1, range)
     const answers = shuffleArray([correct, ...distractors])
     return { a, b, correct, answers, correctIndex: answers.indexOf(correct) }
 }

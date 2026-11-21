@@ -31,6 +31,13 @@
 
 .settings-fields {
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.settings-row {
+    display: flex;
     gap: 2rem;
     justify-content: center;
     flex-wrap: wrap;
@@ -108,6 +115,39 @@
     margin-top: 0.5rem;
     font-size: 0.9rem;
     opacity: 0.6;
+}
+
+.choice-field {
+    outline: none;
+}
+
+.choice-options {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 72px;
+    align-items: center;
+}
+
+.choice-option {
+    padding: 0.6rem 1.1rem;
+    border: none;
+    border-radius: 999px;
+    background: #fff4dc;
+    color: #7a4b00;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.choice-option:hover {
+    transform: scale(1.06);
+}
+
+.choice-option-selected {
+    background: #ffb347;
+    color: #fff;
 }
 
 .settings-preview {
@@ -300,7 +340,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    padding: 0.6rem 1.5rem;
+    padding: 1rem 1.5rem;
     background: rgba(0, 0, 0, 0.18);
     backdrop-filter: blur(6px);
 }
@@ -351,8 +391,7 @@
     gap: 0.75rem;
     padding: 0.3rem 1rem;
     border-radius: 999px;
-    border: 3px solid transparent;
-    transition: background 0.2s ease, border-color 0.2s ease;
+    transition: box-shadow 0.2s ease;
 }
 
 .history-player .history-faces {
@@ -365,15 +404,16 @@
 
 .history-player-left {
     flex-direction: row;
+    background: linear-gradient(135deg, #1e3c72 0%, #4facfe 60%, #a1e3ff 100%);
 }
 
 .history-player-right {
     flex-direction: row-reverse;
+    background: linear-gradient(135deg, #b23a00 0%, #ff8c1a 60%, #ffd08a 100%);
 }
 
 .history-player-active {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: #ffb347;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px rgba(255, 255, 255, 0.35), 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .history-player-label {

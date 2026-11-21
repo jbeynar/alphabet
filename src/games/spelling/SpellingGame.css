@@ -1,0 +1,44 @@
+.spelling-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #2d6a4f 0%, #52b788 60%, #b7e4c7 100%);
+    font-family: system-ui, sans-serif;
+}
+
+.spelling-content {
+    text-align: center;
+    color: #fff;
+}
+
+.spelling-emoji {
+    display: block;
+    font-size: 6rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.spelling-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.spelling-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin: 0 0 2.5rem;
+}
+
+.spelling-placeholder {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #1b4332;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}

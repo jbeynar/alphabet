@@ -19,7 +19,7 @@ src/
   main.jsx                     - React root mount
   App.jsx                      - Game router: WelcomeScreen (game picker) -> selected game
   components/                  - Shared across games
-    WelcomeScreen.jsx          - Game picker (GAMES list: alphabet, multiplication)
+    WelcomeScreen.jsx          - Game picker (GAMES list: alphabet, multiplication, spelling)
     BackButton.jsx             - Corner button returning to the game picker (same as Escape)
   utils/browserSpeech.js       - Web Speech API wrapper (speakWord), used by both games
   games/
@@ -35,16 +35,24 @@ src/
     multiplication/
       MultiplicationGame.jsx   - Multiplication game: settings -> play -> summary phases, keys a..h answer,
                                  Enter continues after a round (10 turns per player), Escape exits;
-                                 mute (localStorage) skips speech/sounds and shortens the next-question delay
+                                 mute (localStorage) skips speech/sounds and shortens the next-question delay;
+                                 Start saves settings to localStorage and they become the defaults next time
       components/
-        SettingsScreen.jsx     - Four NumberFields (players 1–2, max first factor, max second factor, answer count 2–8) + Start
+        SettingsScreen.jsx     - ChoiceField players (1/2), NumberFields (max first factor, max second factor,
+                                 answer count 2–8), ChoiceField difficulty (easy/hard) + Start
         NumberField.jsx        - Big numeric box: -/+ buttons, typed digits, arrow keys, min/max clamp
+        ChoiceField.jsx        - Pill-option picker in the same card style (↑/↓ or click to change)
         Question.jsx           - "a × b =" with numbered answer cards (green correct / red wrong)
         FaceFeedback.jsx       - Big happy/sad face shown after an answer
         HistoryBar.jsx         - Faces + score for the current round; with 2 players, player 1 left, player 2 right
         RoundSummary.jsx       - End-of-round card: per-player score, winner/draw, Kontynuuj button
-      utils/questions.js       - generateQuestion(settings, previous): factors, distractors, shuffle
+      utils/questions.js       - generateQuestion(settings, previous): factors, distractors, shuffle;
+                                 factorRange(): hard difficulty uses only factors >= ceil(40% of max)
       utils/sounds.js          - playGentleWrong(): soft Web Audio tone for a wrong answer
+    spelling/
+      SpellingGame.jsx         - Spelling game (trudne wyrazy): placeholder screen only, no gameplay yet;
+                                 Escape / back button exits
+      SpellingGame.css         - Green gradient background + placeholder card
 index.html                     - Entry HTML (global reset + .app-background)
 ```
 

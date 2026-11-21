@@ -2,6 +2,7 @@ import {useState} from 'react'
 import WelcomeScreen from './components/WelcomeScreen'
 import AlphabetGame from './games/alphabet/AlphabetGame'
 import MultiplicationGame from './games/multiplication/MultiplicationGame'
+import SpellingGame from './games/spelling/SpellingGame'
 
 function App() {
     const [game, setGame] = useState(null)
@@ -11,6 +12,9 @@ function App() {
     }
     if (game === 'multiplication') {
         return <MultiplicationGame onExit={() => setGame(null)} />
+    }
+    if (game === 'spelling') {
+        return <SpellingGame onExit={() => setGame(null)} />
     }
 
     return <WelcomeScreen onSelectGame={setGame} />

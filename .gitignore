@@ -38,3 +38,7 @@ Thumbs.db
 .cache
 .eslintcache
 coverage
+
+# Firebase
+.firebase/
+firebase-debug.log
