@@ -2,12 +2,14 @@ import { useState } from 'react'
 import NumberField from './NumberField'
 
 export const SETTINGS_LIMITS = {
+    players: { min: 1, max: 2 },
     maxA: { min: 1, max: 20 },
     maxB: { min: 1, max: 20 },
     answerCount: { min: 2, max: 8 },
 }
 
 const FIELDS = [
+    { key: 'players', label: 'Ilu graczy' },
     { key: 'maxA', label: 'Pierwsza liczba do' },
     { key: 'maxB', label: 'Druga liczba do' },
     { key: 'answerCount', label: 'Ile odpowiedzi' },

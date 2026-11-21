@@ -33,13 +33,16 @@ src/
       data/words.json          - Polish alphabet with 4 words per letter
       data/images/<letter>/    - Word illustrations (loaded via import.meta.glob)
     multiplication/
-      MultiplicationGame.jsx   - Multiplication game: settings -> play phases, keys a..h answer, Escape exits
+      MultiplicationGame.jsx   - Multiplication game: settings -> play -> summary phases, keys a..h answer,
+                                 Enter continues after a round (10 turns per player), Escape exits;
+                                 mute (localStorage) skips speech/sounds and shortens the next-question delay
       components/
-        SettingsScreen.jsx     - Three NumberFields (max first factor, max second factor, answer count 2–8) + Start
+        SettingsScreen.jsx     - Four NumberFields (players 1–2, max first factor, max second factor, answer count 2–8) + Start
         NumberField.jsx        - Big numeric box: -/+ buttons, typed digits, arrow keys, min/max clamp
         Question.jsx           - "a × b =" with numbered answer cards (green correct / red wrong)
         FaceFeedback.jsx       - Big happy/sad face shown after an answer
-        HistoryBar.jsx         - Row of small faces at the bottom (session-only history)
+        HistoryBar.jsx         - Faces + score for the current round; with 2 players, player 1 left, player 2 right
+        RoundSummary.jsx       - End-of-round card: per-player score, winner/draw, Kontynuuj button
       utils/questions.js       - generateQuestion(settings, previous): factors, distractors, shuffle
       utils/sounds.js          - playGentleWrong(): soft Web Audio tone for a wrong answer
 index.html                     - Entry HTML (global reset + .app-background)

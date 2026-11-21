@@ -1,0 +1,29 @@
+.mute-button {
+    position: fixed;
+    top: 16px;
+    left: 72px;
+    z-index: 100;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+
+.mute-button:hover,
+.mute-button:focus-visible {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.55);
+    transform: scale(1.08);
+    outline: none;
+}
+
+.mute-button-muted {
+    opacity: 0.9;
+    background: rgba(0, 0, 0, 0.3);
+}
