@@ -1,3 +1,5 @@
+import './FaceFeedback.css'
+
 function FaceFeedback({ correct }) {
     return (
         <div className={`face-feedback ${correct ? 'face-happy' : 'face-sad'}`} role="status" aria-live="polite">

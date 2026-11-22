@@ -2,6 +2,7 @@ import { useState } from 'react'
 import NumberField from './NumberField'
 import ChoiceField from './ChoiceField'
 import { factorRange } from '../utils/questions'
+import '../../../components/PrimaryButton.css'
 
 export const SETTINGS_LIMITS = {
     maxA: { min: 1, max: 20 },
@@ -80,7 +81,7 @@ function SettingsScreen({ settings, onChange, onStart }) {
                     ? `Działania w zakresie od ${range.minA} do ${range.maxA} × od ${range.minB} do ${range.maxB}`
                     : `Największe działanie: ${settings.maxA} × ${settings.maxB}`}
             </p>
-            <button type="button" className="settings-start" onClick={onStart}>
+            <button type="button" className="primary-button" onClick={onStart}>
                 Start ▶
             </button>
         </div>

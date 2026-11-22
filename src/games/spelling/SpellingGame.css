@@ -12,33 +12,78 @@
     color: #fff;
 }
 
-.spelling-emoji {
-    display: block;
-    font-size: 6rem;
-    line-height: 1;
-    margin-bottom: 1rem;
+.spelling-play {
+    position: relative;
+    width: 100%;
+    padding: 0 2rem 7rem;
 }
 
-.spelling-title {
-    font-size: 4rem;
-    font-weight: 700;
-    margin: 0 0 0.5rem 0;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+.spelling-prompt {
+    margin: 0 0 1.5rem;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
-.spelling-subtitle {
-    font-size: 1.5rem;
-    opacity: 0.9;
-    margin: 0 0 2.5rem;
+.spelling-word {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    margin-bottom: 6rem;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    text-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
 }
 
-.spelling-placeholder {
-    display: inline-block;
-    padding: 1rem 2rem;
+.spelling-letters {
+    white-space: pre;
+}
+
+.spelling-correct-word {
+    margin: -4rem 0 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: #d8f3dc;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.spelling-correct-word b {
+    color: #7bed9f;
+}
+
+.spelling-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.spelling-repeat {
+    padding: 0.6rem 1.2rem;
+    border: none;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.92);
-    color: #1b4332;
-    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 1.1rem;
     font-weight: 700;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.spelling-repeat:hover,
+.spelling-repeat:focus-visible {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+    outline: none;
+}
+
+.spelling-hint {
+    margin: 0.75rem 0 0;
+    font-size: 1rem;
+    opacity: 0.7;
 }

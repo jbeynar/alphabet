@@ -1,3 +1,5 @@
+import './HistoryBar.css'
+
 function PlayerFaces({ entries }) {
     return (
         <div className="history-faces">

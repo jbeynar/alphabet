@@ -1,3 +1,6 @@
+import './RoundSummary.css'
+import './PrimaryButton.css'
+
 function playerScores(history, players) {
     return Array.from({ length: players }, (_, p) =>
         history.filter((ok, i) => i % players === p && ok).length
@@ -30,7 +33,7 @@ function RoundSummary({ history, players, roundSize, onContinue }) {
                 ))}
             </div>
             {result && <p className="round-summary-winner">{result}</p>}
-            <button type="button" className="settings-start" onClick={onContinue}>
+            <button type="button" className="primary-button" onClick={onContinue}>
                 Kontynuuj ▶
             </button>
             <p className="round-summary-hint">albo naciśnij Enter</p>

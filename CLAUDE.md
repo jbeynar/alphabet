@@ -18,10 +18,17 @@ only what is shared across games.
 src/
   main.jsx                     - React root mount
   App.jsx                      - Game router: WelcomeScreen (game picker) -> selected game
-  components/                  - Shared across games
+  components/                  - Shared across games (each component imports its own .css)
     WelcomeScreen.jsx          - Game picker (GAMES list: alphabet, multiplication, spelling)
     BackButton.jsx             - Corner button returning to the game picker (same as Escape)
-  utils/browserSpeech.js       - Web Speech API wrapper (speakWord), used by both games
+    MuteButton.jsx             - Corner button toggling speech/sounds (state owned by the game)
+    FaceFeedback.jsx           - Big happy/sad face shown after an answer
+    HistoryBar.jsx             - Faces + score for the current round; with 2 players, player 1 left, player 2 right
+    RoundSummary.jsx           - End-of-round card: per-player score, winner/draw, Kontynuuj button
+    PrimaryButton.css          - Green pill `.primary-button` (Start, Kontynuuj)
+  utils/
+    browserSpeech.js           - Web Speech API wrapper (speakWord), used by all games
+    sounds.js                  - playGentleWrong(): soft Web Audio tone for a wrong answer
   games/
     alphabet/
       AlphabetGame.jsx         - Alphabet game: key handling, letter/press-count state (Escape exits)
@@ -43,16 +50,25 @@ src/
         NumberField.jsx        - Big numeric box: -/+ buttons, typed digits, arrow keys, min/max clamp
         ChoiceField.jsx        - Pill-option picker in the same card style (↑/↓ or click to change)
         Question.jsx           - "a × b =" with numbered answer cards (green correct / red wrong)
-        FaceFeedback.jsx       - Big happy/sad face shown after an answer
-        HistoryBar.jsx         - Faces + score for the current round; with 2 players, player 1 left, player 2 right
-        RoundSummary.jsx       - End-of-round card: per-player score, winner/draw, Kontynuuj button
       utils/questions.js       - generateQuestion(settings, previous): factors, distractors, shuffle;
                                  factorRange(): hard difficulty uses only factors >= ceil(40% of max)
-      utils/sounds.js          - playGentleWrong(): soft Web Audio tone for a wrong answer
     spelling/
-      SpellingGame.jsx         - Spelling game (trudne wyrazy): placeholder screen only, no gameplay yet;
-                                 Escape / back button exits
-      SpellingGame.css         - Green gradient background + placeholder card
+      SpellingGame.jsx         - Spelling game (ortografia): single player, starts immediately, 10 turns per
+                                 round then RoundSummary (Enter continues). Each turn shows a random word with
+                                 every hard spot (ó/u, ż/rz, h/ch) replaced by a dropdown gap (the first one opens
+                                 automatically); choosing a letter moves to the next empty gap and the last
+                                 choice submits automatically (no check button), wrong gaps turn red and the
+                                 correct word is shown; the word is spoken at turn start and after a correct answer; mute
+                                 (localStorage spelling.muted) skips speech/sounds and shortens the delay;
+                                 Escape closes an open gap menu, otherwise exits
+      SpellingGame.css         - Green gradient background, big word layout, repeat button
+      components/
+        SpellingWord.jsx       - Renders the word's text segments and a GapDropdown per gap (stateless)
+        GapDropdown.jsx        - Custom inline dropdown (no <select>): "?" placeholder, 2 pill options,
+                                 outside click closes, gap-correct / gap-wrong states
+      utils/gaps.js            - PAIRS table, splitWord (digraphs ch/rz matched first), countGaps,
+                                 checkGaps (per gap), pickWord (random, not the previous word)
+      data/words.json          - ~1000 lowercase Polish words with ó/u, ż/rz, h/ch spots
 index.html                     - Entry HTML (global reset + .app-background)
 ```
 
