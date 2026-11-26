@@ -1,15 +1,8 @@
 import { useEffect, useRef, useState, useMemo } from 'react'
 import Speech from 'speak-tts'
 import './Letter.css'
-import words from '../data/words.json'
+import { letters as words, getImageUrl } from '../../../data/words'
 import { speakWord } from '../../../utils/browserSpeech'
-
-const images = import.meta.glob('../data/images/**/*.png', { eager: true })
-
-function getImageUrl(letter, word) {
-    const path = `../data/images/${letter.toLowerCase()}/${word}.png`
-    return images[path]?.default
-}
 
 function shuffleArray(array) {
     const shuffled = [...array]

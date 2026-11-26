@@ -1,0 +1,110 @@
+.english-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #7b2cbf 0%, #c77dff 60%, #ffd6ff 100%);
+    font-family: system-ui, sans-serif;
+}
+
+.english-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 2rem;
+}
+
+.english-card {
+    width: min(50vh, 70vw);
+    aspect-ratio: 1;
+    padding: 1.25rem;
+    border: none;
+    border-radius: 2rem;
+    background: #fff;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.english-card:hover,
+.english-card:focus-visible {
+    transform: scale(1.02);
+    outline: none;
+}
+
+.english-card-reveal {
+    animation: english-pop 0.4s ease;
+}
+
+@keyframes english-pop {
+    0% { transform: scale(0.85); opacity: 0; }
+    60% { transform: scale(1.04); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.english-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 1.25rem;
+}
+
+.english-word {
+    margin: 1.5rem 0 0;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    text-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.english-translation {
+    margin: 0.25rem 0 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.english-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.english-button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.english-button:hover,
+.english-button:focus-visible {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+    outline: none;
+}
+
+.english-button-next {
+    background: #2ecc71;
+}
+
+.english-button-next:hover,
+.english-button-next:focus-visible {
+    background: #27ae60;
+}
+
+.english-hint {
+    margin: 0.75rem 0 0;
+    font-size: 1rem;
+    opacity: 0.7;
+}

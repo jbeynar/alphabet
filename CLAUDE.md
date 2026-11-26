@@ -19,13 +19,18 @@ src/
   main.jsx                     - React root mount
   App.jsx                      - Game router: WelcomeScreen (game picker) -> selected game
   components/                  - Shared across games (each component imports its own .css)
-    WelcomeScreen.jsx          - Game picker (GAMES list: alphabet, multiplication, spelling)
+    WelcomeScreen.jsx          - Game picker (GAMES list: alphabet, multiplication, spelling, english)
     BackButton.jsx             - Corner button returning to the game picker (same as Escape)
     MuteButton.jsx             - Corner button toggling speech/sounds (state owned by the game)
     FaceFeedback.jsx           - Big happy/sad face shown after an answer
     HistoryBar.jsx             - Faces + score for the current round; with 2 players, player 1 left, player 2 right
     RoundSummary.jsx           - End-of-round card: per-player score, winner/draw, Kontynuuj button
     PrimaryButton.css          - Green pill `.primary-button` (Start, Kontynuuj)
+  data/                        - Word data shared by the alphabet and english games
+    words.json                 - Polish alphabet with 4 words per letter ({ pl, en })
+    images/<letter>/<pl>.png   - Word illustrations (26 of 32 letters have them)
+    words.js                   - letters (words.json), getImageUrl(letter, word) via import.meta.glob,
+                                 pictureWords: flat deduped list of { pl, en, letter, image } with an image
   utils/
     browserSpeech.js           - Web Speech API wrapper (speakWord), used by all games
     sounds.js                  - playGentleWrong(): soft Web Audio tone for a wrong answer
@@ -36,9 +41,7 @@ src/
         AlphabetWelcomeScreen  - Intro screen of the alphabet game (title + decorative keyboard)
         Keyboard.jsx           - Decorative SVG keyboard
         FuseLoader.jsx         - 1s progress bar shown when a letter changes
-        Letter.jsx             - Letter view: big letter, word images board, speech
-      data/words.json          - Polish alphabet with 4 words per letter
-      data/images/<letter>/    - Word illustrations (loaded via import.meta.glob)
+        Letter.jsx             - Letter view: big letter, word images board (from src/data), speech
     multiplication/
       MultiplicationGame.jsx   - Multiplication game: settings -> play -> summary phases, keys a..h answer,
                                  Enter continues after a round (10 turns per player), Escape exits;
@@ -69,6 +72,12 @@ src/
       utils/gaps.js            - PAIRS table, splitWord (digraphs ch/rz matched first), countGaps,
                                  checkGaps (per gap), pickWord (random, not the previous word)
       data/words.json          - ~1000 lowercase Polish words with ó/u, ż/rz, h/ch spots
+    english/
+      EnglishGame.jsx          - English game: shows a random picture from src/data (pictureWords, never the
+                                 previous one), the English word and its Polish translation, speaks the English
+                                 word (en-GB) on each change; Space/Enter/→/click shows the next picture,
+                                 Repeat re-speaks; mute (localStorage english.muted) skips speech; Escape exits
+      EnglishGame.css          - Purple gradient background, white picture card, Repeat/Next buttons
 index.html                     - Entry HTML (global reset + .app-background)
 ```
 

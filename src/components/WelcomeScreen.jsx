@@ -5,6 +5,7 @@ const GAMES = [
     { id: 'alphabet', title: 'Alfabet', emoji: '🔤', available: true },
     { id: 'multiplication', title: 'Mnożenie', emoji: '✖️', available: true },
     { id: 'spelling', title: 'Ortografia', emoji: '✏️', available: true },
+    { id: 'english', title: 'Angielski', emoji: '🇬🇧', available: true },
 ]
 
 function WelcomeScreen({ onSelectGame }) {
