@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import BackButton from '../../components/BackButton'
 import MuteButton from '../../components/MuteButton'
+import SpeakerIcon from '../../components/SpeakerIcon'
 import FaceFeedback from '../../components/FaceFeedback'
 import HistoryBar from '../../components/HistoryBar'
 import RoundSummary from '../../components/RoundSummary'
@@ -199,7 +200,7 @@ function SpellingGame({ onExit }) {
                             {!muted && (
                                 <div className="spelling-actions">
                                     <button type="button" className="spelling-repeat" onClick={() => speakWord(turn.word, { lang: 'pl-PL' })}>
-                                        🔊 Powtórz
+                                        <SpeakerIcon /> Powtórz
                                     </button>
                                 </div>
                             )}

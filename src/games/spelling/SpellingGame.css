@@ -87,3 +87,8 @@
     font-size: 1rem;
     opacity: 0.7;
 }
+
+.spelling-repeat .speaker-icon {
+    vertical-align: -0.22em;
+    margin-right: 0.15em;
+}

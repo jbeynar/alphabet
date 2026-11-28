@@ -3,7 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #7b2cbf 0%, #c77dff 60%, #ffd6ff 100%);
+    background-color: var(--english-color, #7b2cbf);
+    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.18) 0%, rgba(255, 255, 255, 0.35) 100%);
+    transition: background-color 0.4s ease;
     font-family: system-ui, sans-serif;
 }
 
@@ -51,8 +53,34 @@
     border-radius: 1.25rem;
 }
 
+.english-progress {
+    width: min(50vh, 70vw);
+    height: 4px;
+    margin-top: 1rem;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.english-progress-bar {
+    height: 100%;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+    transform-origin: left;
+    animation: english-progress linear forwards;
+}
+
+@keyframes english-progress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+.english-icon {
+    vertical-align: -0.18em;
+    margin-right: 0.1em;
+}
+
 .english-word {
-    margin: 1.5rem 0 0;
+    margin: 1rem 0 0;
     font-size: clamp(2.5rem, 7vw, 5rem);
     font-weight: 800;
     letter-spacing: 0.04em;
@@ -71,7 +99,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
     margin-top: 1.5rem;
 }
 
@@ -94,6 +123,13 @@
     outline: none;
 }
 
+.english-button:disabled {
+    opacity: 0.4;
+    cursor: default;
+    background: rgba(255, 255, 255, 0.3);
+    transform: none;
+}
+
 .english-button-next {
     background: #2ecc71;
 }
@@ -107,4 +143,9 @@
     margin: 0.75rem 0 0;
     font-size: 1rem;
     opacity: 0.7;
+}
+
+.english-button .speaker-icon {
+    vertical-align: -0.22em;
+    margin-right: 0.15em;
 }

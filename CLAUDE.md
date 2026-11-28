@@ -22,6 +22,7 @@ src/
     WelcomeScreen.jsx          - Game picker (GAMES list: alphabet, multiplication, spelling, english)
     BackButton.jsx             - Corner button returning to the game picker (same as Escape)
     MuteButton.jsx             - Corner button toggling speech/sounds (state owned by the game)
+    SpeakerIcon.jsx            - Minimal line SVG speaker (muted variant with a cross), used by MuteButton and Repeat buttons
     FaceFeedback.jsx           - Big happy/sad face shown after an answer
     HistoryBar.jsx             - Faces + score for the current round; with 2 players, player 1 left, player 2 right
     RoundSummary.jsx           - End-of-round card: per-player score, winner/draw, Kontynuuj button
@@ -75,9 +76,18 @@ src/
     english/
       EnglishGame.jsx          - English game: shows a random picture from src/data (pictureWords, never the
                                  previous one), the English word and its Polish translation, speaks the English
-                                 word (en-GB) on each change; Space/Enter/→/click shows the next picture,
+                                 word (en-GB) on each change; Space/Enter/→/click shows the next picture
+                                 (a held key advances only once, key auto-repeat is ignored) and picks a new
+                                 random background color (COLORS, never the previous one);
+                                 ←/Back button returns to earlier pictures (history of word + color kept
+                                 in state; Next replays it forward before picking new ones);
+                                 autoplay advances to the next picture after 8 s (AUTOPLAY_MS, countdown
+                                 restarts on every change, thin progress bar under the card; it stops while
+                                 the browser tab is hidden and restarts when it is visible again); Pause/Play
+                                 button or P toggles it (localStorage english.autoplay, on by default);
                                  Repeat re-speaks; mute (localStorage english.muted) skips speech; Escape exits
-      EnglishGame.css          - Purple gradient background, white picture card, Repeat/Next buttons
+      EnglishGame.css          - Background color from --english-color with a gradient overlay (animated
+                                 transition), white picture card, autoplay progress bar, Back/Repeat/Pause/Next buttons
 index.html                     - Entry HTML (global reset + .app-background)
 ```
 

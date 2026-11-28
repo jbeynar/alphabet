@@ -1,3 +1,4 @@
+import SpeakerIcon from './SpeakerIcon'
 import './MuteButton.css'
 
 function MuteButton({ muted, onToggle }) {
@@ -11,7 +12,7 @@ function MuteButton({ muted, onToggle }) {
             aria-pressed={muted}
             title={label}
         >
-            {muted ? '🔇' : '🔊'}
+            <SpeakerIcon muted={muted} size={22} />
         </button>
     )
 }
